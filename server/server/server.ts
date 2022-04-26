@@ -1,5 +1,7 @@
 import express from "express";
 import path from "path";
+import Logger from "../classes/Logger";
+import color from "colors/safe";
 
 const PORT = process.env.PORT || 4000;
 
@@ -10,7 +12,7 @@ app.use(express.json());
 app.use(express.static("../client/build"));
 
 app.listen(PORT, () => {
-  console.log(`Server listening on ${PORT}`);
+  Logger.log(`Server listening on port ${color.bold(color.underline(PORT.toString()))}`, "INFO", "SERVER");
 });
 
 app.get("/api/hello", (req, res) => {
