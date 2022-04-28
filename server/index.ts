@@ -6,6 +6,7 @@ import Database from "./classes/Database";
 import color from "colors/safe"
 import FeaturesLoader from "./classes/FeaturesLoader";
 import CommandLoader from "./classes/CommandLoader";
+import Data from "./classes/Data";
 
 const client = new Discord.Client({
   partials: ["MESSAGE", "CHANNEL", "REACTION"],
@@ -14,6 +15,7 @@ const client = new Discord.Client({
 
 client.on("ready", async () => {
   Logger.log(`Logged in as ${color.bold(color.underline(client.user?.tag || "NONE"))}`, "INFO", "CLIENT");
+  Data.clientId = client.user?.id || "";
   FeaturesLoader.client = client;
   CommandLoader.client = client;
 

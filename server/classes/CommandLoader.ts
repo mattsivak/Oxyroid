@@ -3,9 +3,10 @@ import path from 'path';
 import Logger from './Logger';
 import Settings from './Settings';
 import Database from './Database';
-import { Client, Interaction } from 'discord.js';
+import { Client, Interaction, MessageEmbed, MessagePayload } from 'discord.js';
 import Command from './Command';
 import { REST } from '@discordjs/rest';
+import Data from './Data';
 const { Routes } = require('discord-api-types/v9');
 
 
@@ -53,7 +54,7 @@ export default class CommandLoader {
       const dataToSend = this.Commands.map(command => command.builder.toJSON());
 
       await this.rest.put(
-        Routes.applicationGuildCommands("899284042925637632", guildId),
+        Routes.applicationGuildCommands(Data.clientId, guildId),
         // @ts-expect-error
         { data: dataToSend }
       )
@@ -73,7 +74,7 @@ export default class CommandLoader {
       const dataToSend = this.Commands.map(command => command.builder.toJSON());
 
       await this.rest.put(
-        Routes.applicationCommands("899284042925637632"),
+        Routes.applicationCommands(Data.clientId),
         { body: dataToSend },
       );
 
@@ -90,20 +91,33 @@ export default class CommandLoader {
       return;
     }
 
-    for (const command of this.Commands) {
-      this.client.on('interactionCreate', (interaction) => {
-        if (!interaction.isCommand()) return;
+    this.client.on('interactionCreate', async (interaction) => {
 
-        return interaction.reply("test");
+      if (!interaction.isCommand()) return;
 
-        // const commandName = interaction.commandName;
+      const command = this.Commands.find(command => command.builder.name.trim() === interaction.commandName);
 
-        // for (const command of this.Commands) {
-        //   if (command.builder.name === commandName) {
-        //     command.run(this.client, interaction);
-        //   }
-        // }
-      })
-    }
+      if (!command) return Logger.log(`CommandLoader: Command not found: ${interaction.commandName}`, "ERR", "COMMANDS");
+      command.run(this.client, interaction).then((output) => {
+        if (typeof output === 'string') {
+          const embed = new MessageEmbed().setTitle(output).setFooter(`Command executed by ${interaction.user.tag}`);
+          interaction.reply({ embeds: [embed] });
+        } else if (output instanceof MessageEmbed) {
+          output.setFooter(`Command executed by ${interaction.user.tag}`);
+          interaction.reply({
+            embeds: [output]
+          });
+        } else {
+          if (output.embeds) {
+            for (const embed of output.embeds) {
+              if (embed instanceof MessageEmbed) {
+                embed.setFooter(`Command executed by ${interaction.user.tag}`);
+              }
+            }
+          }
+          interaction.reply(output);
+        }
+      });
+    });
   }
 }
