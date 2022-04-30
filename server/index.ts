@@ -1,4 +1,3 @@
-import { start } from "./server/server";
 import Discord from "discord.js";
 import Settings from "./classes/Settings";
 import Logger from "./classes/Logger";
@@ -7,6 +6,7 @@ import color from "colors/safe"
 import FeaturesLoader from "./classes/FeaturesLoader";
 import CommandLoader from "./classes/CommandLoader";
 import Data from "./classes/Data";
+import startServer from "./server/server";
 
 const client = new Discord.Client({
   partials: ["MESSAGE", "CHANNEL", "REACTION"],
@@ -19,6 +19,8 @@ client.on("ready", async () => {
   FeaturesLoader.client = client;
   CommandLoader.client = client;
 
+  startServer();
+
   FeaturesLoader.load();
 
   await CommandLoader.load();
@@ -26,7 +28,6 @@ client.on("ready", async () => {
   CommandLoader.registerEventHandler();
 
   new Database();
-  start()
 })
 
 client.login(Settings.token);
