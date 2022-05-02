@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.static(path.resolve(__dirname, "..", "..", "client", "build")));
 
 app.listen(PORT, () => {
-  Logger.log(`Server listening on port ${color.bold(color.underline(PORT.toString()))}`, "INFO", "SERVER");
+  Logger.log(`Server listening on port ${PORT.toString}`, "INFO", "SERVER", "console|file|discord");
 });
 
 app.get("/api/hello", (req, res) => {

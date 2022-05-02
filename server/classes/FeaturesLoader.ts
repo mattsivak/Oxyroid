@@ -13,12 +13,12 @@ export default class FeaturesLoader {
 
   static load(): void {
     if (!this.client) {
-      Logger.log("FeaturesLoader: No client provided", "ERR", "FEATURES");
+      Logger.log("FeaturesLoader: No client provided", "ERR", "FEATURES", "console|file|discord");
       return;
     }
 
     if (this.alreadyLoaded) {
-      Logger.log("FeaturesLoader: Already loaded", "WARN", "FEATURES");
+      Logger.log("FeaturesLoader: Already loaded", "WARN", "FEATURES", "console|file|discord");
       return;
     }
 
@@ -31,7 +31,7 @@ export default class FeaturesLoader {
           FeaturesLoader.Features.push(module.default);
           module.default.run(FeaturesLoader.client);
 
-          Logger.log(`Loaded feature: ${file}`, "INFO", "FEATURES");
+          Logger.log(`Loaded feature: ${file}`, "INFO", "FEATURES", "console|file|discord");
         });
       }
     }

@@ -13,8 +13,10 @@ const client = new Discord.Client({
   intents: ["GUILDS", "GUILD_MEMBERS", "GUILD_MESSAGES"]
 });
 
+Data.client = client;
+
 client.on("ready", async () => {
-  Logger.log(`Logged in as ${color.bold(color.underline(client.user?.tag || "NONE"))}`, "INFO", "CLIENT");
+  Logger.log(`Logged in as ${client.user?.tag}`, "INFO", "CLIENT", "console|file|discord");
   Data.clientId = client.user?.id || "";
   FeaturesLoader.client = client;
   CommandLoader.client = client;
@@ -31,3 +33,35 @@ client.on("ready", async () => {
 })
 
 client.login(Settings.token);
+
+process.stdin.resume();
+
+let alreadyEded = false;
+
+const date = new Date();
+const dateString = date.toLocaleString();
+
+Logger.log(`|\n|\n| Starting procces. Date and time is ${dateString}\n|\n|`, "INFO", "PROCESS", "file|withoutFormating");
+Logger.log(`Starting procces. Date and time is ${dateString}`, "INFO", "PROCESS", "discord");
+
+function exitHandler(reason: any, promise: any) {
+  if (alreadyEded) return;
+  Logger.log(`Exiting with reason: ${JSON.stringify(reason)}`, "INFO", "PROCESS", "console|file|discord");
+  setTimeout(() => {
+    alreadyEded = true;
+    process.exit(0);
+  }, 500);
+}
+
+//do something when app is closing
+process.on('exit', exitHandler.bind(null, { cleanup: true }));
+
+//catches ctrl+c event
+process.on('SIGINT', exitHandler.bind(null, { exit: true }));
+
+// catches "kill pid" (for example: nodemon restart)
+process.on('SIGUSR1', exitHandler.bind(null, { exit: true }));
+process.on('SIGUSR2', exitHandler.bind(null, { exit: true }));
+
+//catches uncaught exceptions
+process.on('uncaughtException', exitHandler.bind(null, { exit: true }));
