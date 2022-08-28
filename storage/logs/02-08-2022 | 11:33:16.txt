@@ -1,0 +1,12 @@
+| Starting procces. Date and time is 02/08/2022, 11:33:16
+|
+|
+[02/08/2022, 11:33:17] [INFO - CLIENT]: Logged in as Disbase - mattsivak#2279
+[02/08/2022, 11:33:17] [INFO - COMMANDS]: Loaded command: clear.ts
+[02/08/2022, 11:33:17] [INFO - COMMANDS]: Loaded command: dump.ts
+[02/08/2022, 11:33:17] [INFO - COMMANDS]: Loaded command: ping.ts
+[02/08/2022, 11:33:17] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts
+[02/08/2022, 11:33:17] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts
+[02/08/2022, 11:33:17] [INFO - SERVER]: Server listening on port 4000
+[02/08/2022, 11:33:17] [INFO - DB]: Connected to database
+[02/08/2022, 11:33:18] [INFO - COMMANDS]: Successfully updated slash commands.

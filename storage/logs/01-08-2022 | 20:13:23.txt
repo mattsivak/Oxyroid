@@ -1,0 +1,5 @@
+| Starting procces. Date and time is 01/08/2022, 20:13:23
+|
+|
+[01/08/2022, 20:13:30] [INFO - PROCESS]: Exiting with reason: "SIGUSR2"
+[01/08/2022, 20:13:30] [INFO - PROCESS]: Exiting with reason: "SIGUSR2"

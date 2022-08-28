@@ -1,0 +1,19 @@
+| Starting procces. Date and time is 27/08/2022, 20:30:03
+|
+|
+[27/08/2022, 20:30:04] [INFO - CLIENT]: Logged in as Disbase - mattsivak#2279
+[27/08/2022, 20:30:04] [INFO - COMMANDS]: Loaded command: clear.ts
+[27/08/2022, 20:30:04] [INFO - COMMANDS]: Loaded command: dump.ts
+[27/08/2022, 20:30:04] [INFO - COMMANDS]: Loaded command: ping.ts
+[27/08/2022, 20:30:04] [INFO - SERVER]: Server listening on port 4000
+[27/08/2022, 20:30:04] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts
+[27/08/2022, 20:30:04] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts
+[27/08/2022, 20:30:05] [ERR - Logger]: {"rawError":{"message":"Missing Access","code":50001},"code":50001,"status":403,"method":"GET","url":"https://discord.com/api/v10/channels/897869787949064193","requestBody":{}}
+[27/08/2022, 20:30:05] [INFO - COMMANDS]: Successfully updated slash commands.
+[27/08/2022, 20:30:06] [ERR - Logger]: {"rawError":{"message":"Missing Access","code":50001},"code":50001,"status":403,"method":"GET","url":"https://discord.com/api/v10/channels/897869787949064193","requestBody":{}}
+[27/08/2022, 20:30:06] [ERR - Logger]: {"rawError":{"message":"Missing Access","code":50001},"code":50001,"status":403,"method":"GET","url":"https://discord.com/api/v10/channels/897869787949064193","requestBody":{}}
+[27/08/2022, 20:30:06] [ERR - Logger]: {"rawError":{"message":"Missing Access","code":50001},"code":50001,"status":403,"method":"GET","url":"https://discord.com/api/v10/channels/897869787949064193","requestBody":{}}
+[27/08/2022, 20:30:06] [ERR - Logger]: {"rawError":{"message":"Missing Access","code":50001},"code":50001,"status":403,"method":"GET","url":"https://discord.com/api/v10/channels/897869787949064193","requestBody":{}}
+[27/08/2022, 20:30:07] [ERR - Logger]: {"rawError":{"message":"Missing Access","code":50001},"code":50001,"status":403,"method":"GET","url":"https://discord.com/api/v10/channels/897869787949064193","requestBody":{}}
+[27/08/2022, 20:30:07] [ERR - Logger]: {"rawError":{"message":"Missing Access","code":50001},"code":50001,"status":403,"method":"GET","url":"https://discord.com/api/v10/channels/897869787949064193","requestBody":{}}
+[27/08/2022, 20:30:07] [ERR - Logger]: {"rawError":{"message":"Missing Access","code":50001},"code":50001,"status":403,"method":"GET","url":"https://discord.com/api/v10/channels/897869787949064193","requestBody":{}}

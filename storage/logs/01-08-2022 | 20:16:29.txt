@@ -1,0 +1,14 @@
+| Starting procces. Date and time is 01/08/2022, 20:16:29
+|
+|
+[01/08/2022, 20:16:29] [INFO - CLIENT]: Logged in as Disbase - mattsivak#2279
+[01/08/2022, 20:16:30] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts
+[01/08/2022, 20:16:30] [INFO - COMMANDS]: Loaded command: ping.ts
+[01/08/2022, 20:16:30] [INFO - COMMANDS]: Loaded command: dump.ts
+[01/08/2022, 20:16:29] [INFO - SERVER]: Server listening on port 4000
+[01/08/2022, 20:16:30] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts
+[01/08/2022, 20:16:30] [INFO - DB]: Connected to database
+[01/08/2022, 20:16:56] [INFO - PROCESS]: Exiting with reason: "SIGUSR2"
+[01/08/2022, 20:16:56] [INFO - PROCESS]: Exiting with reason: "SIGUSR2"
+[01/08/2022, 20:16:56] [INFO - PROCESS]: Exiting with reason: "SIGUSR2"
+[01/08/2022, 20:16:56] [INFO - PROCESS]: Exiting with reason: "SIGUSR2"

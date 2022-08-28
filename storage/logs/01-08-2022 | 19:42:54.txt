@@ -1,0 +1,12 @@
+| Starting procces. Date and time is 01/08/2022, 19:42:54
+|
+|
+[01/08/2022, 19:42:54] [INFO - CLIENT]: Logged in as Disbase - mattsivak#2279
+[01/08/2022, 19:42:54] [INFO - SERVER]: Server listening on port 4000
+[01/08/2022, 19:42:55] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts
+[01/08/2022, 19:42:55] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts
+[01/08/2022, 19:42:55] [INFO - COMMANDS]: Loaded command: dump.ts
+[01/08/2022, 19:42:55] [INFO - COMMANDS]: Loaded command: ping.ts
+[01/08/2022, 19:42:55] [INFO - COMMANDS]: Successfully updated slash commands.
+[01/08/2022, 19:43:25] [ERR - DB]: Error connecting to database: MongooseServerSelectionError: getaddrinfo ENOTFOUND mongo
+[01/08/2022, 19:43:25] [INFO - PROCESS]: Exiting with reason: "uncaughtException"

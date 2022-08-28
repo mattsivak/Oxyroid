@@ -1,0 +1,19 @@
+| Starting procces. Date and time is 27/08/2022, 20:28:27
+|
+|
+[27/08/2022, 20:28:28] [INFO - CLIENT]: Logged in as Disbase - mattsivak#2279
+[27/08/2022, 20:28:28] [INFO - SERVER]: Server listening on port 4000
+[27/08/2022, 20:28:29] [INFO - COMMANDS]: Loaded command: dump.ts
+[27/08/2022, 20:28:29] [INFO - COMMANDS]: Loaded command: ping.ts
+[27/08/2022, 20:28:29] [INFO - COMMANDS]: Loaded command: clear.ts
+[27/08/2022, 20:28:29] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts
+[27/08/2022, 20:28:29] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts
+[27/08/2022, 20:28:29] [ERR - Logger]: {"rawError":{"message":"Unknown Channel","code":10003},"code":10003,"status":404,"method":"GET","url":"https://discord.com/api/v10/channels/970689818398965822","requestBody":{}}
+[27/08/2022, 20:28:29] [INFO - COMMANDS]: Successfully updated slash commands.
+[27/08/2022, 20:28:29] [ERR - Logger]: {"rawError":{"message":"Unknown Channel","code":10003},"code":10003,"status":404,"method":"GET","url":"https://discord.com/api/v10/channels/970689818398965822","requestBody":{}}
+[27/08/2022, 20:28:30] [ERR - Logger]: {"rawError":{"message":"Unknown Channel","code":10003},"code":10003,"status":404,"method":"GET","url":"https://discord.com/api/v10/channels/970689818398965822","requestBody":{}}
+[27/08/2022, 20:28:30] [ERR - Logger]: {"rawError":{"message":"Unknown Channel","code":10003},"code":10003,"status":404,"method":"GET","url":"https://discord.com/api/v10/channels/970689818398965822","requestBody":{}}
+[27/08/2022, 20:28:30] [ERR - Logger]: {"rawError":{"message":"Unknown Channel","code":10003},"code":10003,"status":404,"method":"GET","url":"https://discord.com/api/v10/channels/970689818398965822","requestBody":{}}
+[27/08/2022, 20:28:30] [ERR - Logger]: {"rawError":{"message":"Unknown Channel","code":10003},"code":10003,"status":404,"method":"GET","url":"https://discord.com/api/v10/channels/970689818398965822","requestBody":{}}
+[27/08/2022, 20:28:30] [ERR - Logger]: {"rawError":{"message":"Unknown Channel","code":10003},"code":10003,"status":404,"method":"GET","url":"https://discord.com/api/v10/channels/970689818398965822","requestBody":{}}
+[27/08/2022, 20:28:31] [ERR - Logger]: {"rawError":{"message":"Unknown Channel","code":10003},"code":10003,"status":404,"method":"GET","url":"https://discord.com/api/v10/channels/970689818398965822","requestBody":{}}

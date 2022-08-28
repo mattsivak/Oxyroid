@@ -1,0 +1,13 @@
+| Starting procces. Date and time is 31/07/2022, 18:43:53
+|
+|
+[31/07/2022, 18:43:53] [INFO - SERVER]: Server listening on port function toString() { [native code] }
+[31/07/2022, 18:43:54] [INFO - CLIENT]: Logged in as Disbase - mattsivak#2279
+[31/07/2022, 18:43:55] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts
+[31/07/2022, 18:43:55] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts
+[31/07/2022, 18:43:55] [INFO - COMMANDS]: Loaded command: dump.ts
+[31/07/2022, 18:43:55] [INFO - COMMANDS]: Loaded command: ping.ts
+[31/07/2022, 18:43:55] [INFO - COMMANDS]: Successfully updated slash commands.
+[31/07/2022, 18:43:55] [INFO - DB]: Connected to database
+[31/07/2022, 18:45:53] [INFO - PROCESS]: Exiting with reason: "SIGUSR2"
+[31/07/2022, 18:45:53] [INFO - PROCESS]: Exiting with reason: "SIGUSR2"

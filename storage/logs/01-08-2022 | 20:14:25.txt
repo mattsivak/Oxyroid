@@ -1,0 +1,6 @@
+| Starting procces. Date and time is 01/08/2022, 20:14:25
+|
+|
+[01/08/2022, 20:14:25] [INFO - PROCESS]: Exiting with reason: "SIGINT"
+[01/08/2022, 20:14:26] [INFO - PROCESS]: Exiting with reason: "SIGINT"
+[01/08/2022, 20:14:26] [INFO - PROCESS]: Exiting with reason: "SIGINT"
