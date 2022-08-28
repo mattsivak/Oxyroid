@@ -11,6 +11,7 @@ export default class FeaturesLoader {
   static client: Client;
   static alreadyLoaded: boolean = false;
 
+  // Load features
   static load(): void {
     if (!this.client) {
       Logger.log("FeaturesLoader: No client provided", "ERR", "FEATURES", "console|file|discord");

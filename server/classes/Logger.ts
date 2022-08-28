@@ -1,5 +1,5 @@
 import color from 'colors/safe';
-import { TextChannel } from 'discord.js';
+import { ChannelType, TextChannel } from 'discord.js';
 import fs from 'fs';
 import path from 'path';
 import Data from './Data';
@@ -8,6 +8,8 @@ import Settings from './Settings';
 type Type = "OKAY" | "ERR" | "WARN" | "INFO" | "NOTE";
 
 export default class Logger {
+  static firstLogTime: string | null;
+
   static log(message: string, type: Type, from: string, loggerType: string): void {
     if (loggerType.includes("console")) {
       this.logToConsole(message, type, from);
@@ -38,14 +40,16 @@ export default class Logger {
       msg = message;
     }
 
-    const dateString = new Date().toLocaleDateString().replace(/\//g, "-");
+    if (!this.firstLogTime) {
+      this.firstLogTime = new Date().toLocaleString().replace(/\//g, "-").replace(", ", " | ");
+    }
 
     // Check if logs folder exists and create it if not
     if (!fs.existsSync(path.join(__dirname, "..", "..", "storage", "logs"))) {
       fs.mkdirSync(path.join(__dirname, "..", "..", "storage", "logs"));
     }
 
-    fs.appendFile(path.join(__dirname, "..", "..", "storage", "logs", dateString + ".txt"), msg + "\n", (err) => {
+    fs.appendFile(path.join(__dirname, "..", "..", "storage", "logs", this.firstLogTime + ".txt"), msg + "\n", (err) => {
       if (err) {
         this.log(JSON.stringify(err), "ERR", "Logger", "console");
       }
@@ -59,17 +63,17 @@ export default class Logger {
   static logToDiscord(message: string, type: Type, from: string): void {
     const client = Data.client
     if (!client) {
-      this.log("No client provided", "ERR", "Logger", "console|file|discord");
+      this.log("No client provided", "ERR", "Logger", "console|file");
       return;
     }
 
     client.channels.fetch(Settings.logsDiscordChannelId).then((channel) => {
       if (!channel) return;
-      if (channel.type !== "GUILD_TEXT") { return } else {
+      if (channel.type != ChannelType.GuildText) { return } else {
         (channel as TextChannel).send(`[${type}] ${from}: ${message}`);
       }
     }).catch((err) => {
-      this.log(JSON.stringify(err), "ERR", "Logger", "console|file|discord");
+      this.log(JSON.stringify(err), "ERR", "Logger", "console|file");
     });
   }
 }

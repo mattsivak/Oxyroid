@@ -1,10 +1,10 @@
 import Feature from "../classes/Features";
-import database from "../classes/Database";
+// import database from "../classes/Database";
 import Logger from "../classes/Logger";
 import GuildModel from "../database/GuildModel";
 
 export default new Feature("CreatePerGuildModel", (client) => {
-  const mongoose = new database().mongoose;
+  // const mongoose = new database().mongoose;
 
   // Get all guild ids
   const guilds = client.guilds.cache.map(g => g.id);

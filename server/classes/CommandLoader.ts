@@ -2,13 +2,11 @@ import fs from 'fs';
 import path from 'path';
 import Logger from './Logger';
 import Settings from './Settings';
-import Database from './Database';
-import { Client, Interaction, MessageEmbed, MessagePayload } from 'discord.js';
+import { Client, EmbedBuilder } from 'discord.js';
 import Command from './Command';
 import { REST } from '@discordjs/rest';
 import Data from './Data';
-const { Routes } = require('discord-api-types/v9');
-
+import { Routes } from "discord-api-types/v9" 
 
 export default class CommandLoader {
   static Commands: Command[] = [];
@@ -16,6 +14,7 @@ export default class CommandLoader {
   static alreadyLoaded: boolean = false;
   static rest = new REST({ version: '9' }).setToken(Settings.token);
 
+  // Load commands
   static async load(): Promise<void> {
     if (!this.client) {
       Logger.log("CommandLoader: No client provided", "ERR", "COMMANDS", "console|file|discord");
@@ -44,6 +43,7 @@ export default class CommandLoader {
     this.alreadyLoaded = true;
   }
 
+  // Register commands on single guild
   static async registerCommandsOnApiOnSingleGuild(guildId: string): Promise<void> {
     if (!this.client) {
       Logger.log("CommandLoader: No client provided", "ERR", "COMMANDS", "console|file|discord");
@@ -63,6 +63,7 @@ export default class CommandLoader {
     }
   }
 
+  // Register commands on all guilds
   static async registerCommandsOnApi(): Promise<void> {
     if (!this.client) {
       Logger.log("CommandLoader: No client provided", "ERR", "COMMANDS", "console|file|discord");
@@ -85,6 +86,7 @@ export default class CommandLoader {
     }
   }
 
+  // Register event handler
   static registerEventHandler(): void {
     if (!this.client) {
       Logger.log("CommandLoader: No client provided", "ERR", "COMMANDS", "console|file|discord");
@@ -101,18 +103,18 @@ export default class CommandLoader {
       try {
         command.run(this.client, interaction).then((output) => {
           if (typeof output === 'string') {
-            const embed = new MessageEmbed().setTitle(output).setFooter(`Command executed by ${interaction.user.tag}`);
+            const embed = new EmbedBuilder().setTitle(output).setFooter({ text: `Command executed by ${interaction.user.tag}` });
             interaction.reply({ embeds: [embed] });
-          } else if (output instanceof MessageEmbed) {
-            output.setFooter(`Command executed by ${interaction.user.tag}`);
+          } else if (output instanceof EmbedBuilder) {
+            output.setFooter({ text: `Command executed by ${interaction.user.tag}` });
             interaction.reply({
               embeds: [output]
             });
           } else {
             if (output.embeds) {
               for (const embed of output.embeds) {
-                if (embed instanceof MessageEmbed) {
-                  embed.setFooter(`Command executed by ${interaction.user.tag}`);
+                if (embed instanceof EmbedBuilder) {
+                  embed.setFooter({ text: `Command executed by ${interaction.user.tag}` });
                 }
               }
             }

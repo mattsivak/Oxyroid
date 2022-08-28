@@ -1,6 +1,5 @@
-import { Client, Interaction, MessageEmbed } from "discord.js";
+import { Client, Interaction, EmbedBuilder, SlashCommandBuilder } from "discord.js";
 import Command from "../classes/Command";
-import { SlashCommandBuilder } from '@discordjs/builders';
 import Database from "../classes/Database";
 import ping from "ping";
 
@@ -14,7 +13,7 @@ export default new Command(
 
     const resultOfPing = await ping.promise.probe("mongodb.com");
 
-    const embed = new MessageEmbed()
+    const embed = new EmbedBuilder()
       .setTitle("Ping")
       .setDescription(
         `API Latency: ${client.ws.ping}ms\n` +
