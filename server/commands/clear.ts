@@ -4,12 +4,8 @@ import { SlashCommandBuilder } from '@discordjs/builders';
 
 const slash = new SlashCommandBuilder().setName("clear").setDescription("Clear current channel messages")
 
-slash.addNumberOption(option => {
-  return option.setName("amount").setDescription("Amount of messages to delete");
-})
-
 export default new Command(
-  slash,
+  slash, 
   async (_client: Client, message: Interaction) => {
 
 
@@ -18,7 +14,7 @@ export default new Command(
 
     if (message.type !== InteractionType.ApplicationCommand) return "Some error occured";
 
-    const messageAmount = message.options.get("amount");
+    const messageAmount = message.options.get("count");
     if (!messageAmount) return "Some error occured";
 
     if (message.channel?.type !== ChannelType.GuildText) return "Some error occured";
@@ -31,5 +27,13 @@ export default new Command(
       .setColor("#ff0000");
 
     return embed;
-  }
+  },
+  [
+    {
+      name: "count",
+      description: "Count of messages to delete",
+      required: true,
+      type: "number"
+    }
+  ]
 )

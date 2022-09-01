@@ -9,5 +9,8 @@
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "discord.js.userbot": "^1.0.3"
   }
 }

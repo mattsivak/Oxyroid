@@ -1,2 +1,0 @@
-[31/07/2022, 18:40:17] [INFO - PROCESS]: Exiting with reason: "SIGUSR2"
-[31/07/2022, 18:40:17] [INFO - PROCESS]: Exiting with reason: "SIGUSR2"
