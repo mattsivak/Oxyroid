@@ -1,8 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import Logger from './Logger';
-import Settings from './Settings';
-import Database from './Database';
+import Logger from './../Logger';
 import Feature from './Features';
 import { Client } from 'discord.js';
 
@@ -12,7 +10,7 @@ export default class FeaturesLoader {
   static alreadyLoaded: boolean = false;
 
   // Load features
-  static load(): void {
+  static async load(): Promise<void> {
     if (!this.client) {
       Logger.log("FeaturesLoader: No client provided", "ERR", "FEATURES", "console|file|discord");
       return;
@@ -23,7 +21,7 @@ export default class FeaturesLoader {
       return;
     }
 
-    const dir = path.join(__dirname, '../features');
+    const dir = path.join(__dirname, '../../features');
     const files = fs.readdirSync(dir);
 
     for (const file of files) {

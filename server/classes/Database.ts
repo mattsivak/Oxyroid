@@ -23,6 +23,9 @@ export default class DB {
       this.mongoose.connection.on("open", () => {
         Logger.log("Connected to database", "INFO", "DB", "console|file|discord")
       });
+      this.mongoose.connection.on("reconnect", () => {
+        Logger.log("Reconnected to database", "INFO", "DB", "console|file|discord")
+      })
     }
   }
 }

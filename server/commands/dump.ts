@@ -1,10 +1,11 @@
 import { Client, Interaction, EmbedBuilder } from "discord.js";
-import Command from "../classes/Command";
-import { SlashCommandBuilder } from '@discordjs/builders';
+import Command from "../classes/loaders/Command";
 import GuildModel from "../database/GuildModel";
+import Settings from "../classes/Settings"
 
 export default new Command(
-  new SlashCommandBuilder().setName("dump").setDescription("Dump server info"),
+  "dump",
+  "test",
   async (_client: Client, message: Interaction) => {
     if (!message) return "Some error occured"
     if (!message.guild) return "Some error occured";
@@ -16,7 +17,7 @@ export default new Command(
       .setDescription(
         JSON.stringify(guild, null, 2)
       )
-      .setColor("#ff0000");
+      .setColor(Settings.successColor);
 
     return embed;
   }

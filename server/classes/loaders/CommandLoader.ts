@@ -1,11 +1,11 @@
 import fs from 'fs';
 import path from 'path';
-import Logger from './Logger';
-import Settings from './Settings';
+import Logger from './../Logger';
+import Settings from './../Settings';
 import { Client, EmbedBuilder } from 'discord.js';
 import Command from './Command';
 import { REST } from '@discordjs/rest';
-import Data from './Data';
+import Data from './../Data';
 import { Routes } from "discord-api-types/v9" 
 
 export default class CommandLoader {
@@ -26,7 +26,7 @@ export default class CommandLoader {
       return;
     }
 
-    const dir = path.join(__dirname, '../commands');
+    const dir = path.join(__dirname, '../../commands');
     const files = fs.readdirSync(dir);
 
     for (const file of files) {
@@ -87,7 +87,7 @@ export default class CommandLoader {
   }
 
   // Register event handler
-  static registerEventHandler(): void {
+  static async registerEventHandler(): Promise<void> {
     if (!this.client) {
       Logger.log("CommandLoader: No client provided", "ERR", "COMMANDS", "console|file|discord");
       return;

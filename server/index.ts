@@ -2,8 +2,8 @@ import Discord, { GatewayIntentBits, Partials } from "discord.js";
 import Settings from "./classes/Settings";
 import Logger from "./classes/Logger";
 import Database from "./classes/Database";
-import FeaturesLoader from "./classes/FeaturesLoader";
-import CommandLoader from "./classes/CommandLoader";
+import FeaturesLoader from "./classes/loaders/FeaturesLoader";
+import CommandLoader from "./classes/loaders/CommandLoader";
 import Data from "./classes/Data";
 import startServer from "./express";
 
@@ -26,7 +26,7 @@ client.on("ready", async () => {
 
   await CommandLoader.load();
   await CommandLoader.registerCommandsOnApi();
-  CommandLoader.registerEventHandler();
+  await CommandLoader.registerEventHandler();
 
   new Database();
 })

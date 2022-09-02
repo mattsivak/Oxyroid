@@ -1,11 +1,10 @@
 import { Client, Interaction, EmbedBuilder, InteractionType, ChannelType } from "discord.js";
-import Command from "../classes/Command";
-import { SlashCommandBuilder } from '@discordjs/builders';
-
-const slash = new SlashCommandBuilder().setName("clear").setDescription("Clear current channel messages")
+import Command from "../classes/loaders/Command";
+import Settings from "../classes/Settings"
 
 export default new Command(
-  slash, 
+  "clear",
+  "Clear channel",
   async (_client: Client, message: Interaction) => {
 
 
@@ -17,14 +16,23 @@ export default new Command(
     const messageAmount = message.options.get("count");
     if (!messageAmount) return "Some error occured";
 
+    if (messageAmount.value as number > 100) {
+      const embed = new EmbedBuilder()
+        .setTitle("Can't delete more than 100 messages")
+        .setColor(Settings.warningColor);
+  
+      return embed;
+    }
+
     if (message.channel?.type !== ChannelType.GuildText) return "Some error occured";
 
-    await message.channel.bulkDelete(messageAmount.value as number);
+    const messages = await message.channel.bulkDelete(messageAmount.value as number);
 
 
     const embed = new EmbedBuilder()
       .setTitle("Clear")
-      .setColor("#ff0000");
+      .setDescription(`Deleted ${messages.size} messages`)
+      .setColor(Settings.successColor);
 
     return embed;
   },

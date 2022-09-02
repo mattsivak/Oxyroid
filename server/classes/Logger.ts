@@ -9,6 +9,9 @@ type Type = "OKAY" | "ERR" | "WARN" | "INFO" | "NOTE";
 
 export default class Logger {
   static firstLogTime: string | null;
+  static firstLogTimeToDiscord: string | null;
+  static channel: TextChannel | null;
+  static notLogedMessages: Array<string> = []
 
   static log(message: string, type: Type, from: string, loggerType: string): void {
     if (loggerType.includes("console")) {
@@ -62,18 +65,40 @@ export default class Logger {
 
   static logToDiscord(message: string, type: Type, from: string): void {
     const client = Data.client
+    const time = new Date().toLocaleString();
+
     if (!client) {
       this.log("No client provided", "ERR", "Logger", "console|file");
       return;
     }
 
-    client.channels.fetch(Settings.logsDiscordChannelId).then((channel) => {
-      if (!channel) return;
-      if (channel.type != ChannelType.GuildText) { return } else {
-        (channel as TextChannel).send(`[${type}] ${from}: ${message}`);
+    if (!this.firstLogTimeToDiscord) {
+      this.firstLogTimeToDiscord = new Date().toLocaleString().replace(/\//g, "-").replace(", ", "_").replace(/\:/g, "-");
+
+      client.guilds.fetch(Settings.logsDiscordGuildId).then(guild => {
+        guild.channels.create({
+          parent: Settings.logsDiscordCategoryId,
+          type: ChannelType.GuildText,
+          name: this.firstLogTimeToDiscord as string,
+        }).then(channel => {
+          this.channel = channel
+        })
+      })
+
+    }
+
+      if(!this.channel) {
+        this.notLogedMessages.push(`[${time}] ${type} ${from}: ${message}`)
+      } else if (this.channel && this.notLogedMessages.length >= 1) {
+        if (this.channel.type != ChannelType.GuildText) { return } else {
+          (this.channel as TextChannel).send(this.notLogedMessages.join("\n"));
+          this.notLogedMessages = [];
+          (this.channel as TextChannel).send(`[${time}] ${type} ${from}: ${message}`);
+        }
+      } else {
+        if (this.channel.type != ChannelType.GuildText) { return } else {
+          (this.channel as TextChannel).send(`[${time}] ${type} ${from}: ${message}`);
+        }
       }
-    }).catch((err) => {
-      this.log(JSON.stringify(err), "ERR", "Logger", "console|file");
-    });
   }
 }

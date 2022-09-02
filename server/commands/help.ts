@@ -1,9 +1,11 @@
 import { Client, Interaction, EmbedBuilder, SlashCommandBuilder } from "discord.js";
-import Command from "../classes/Command";
-import CommandHandler from "../classes/CommandLoader"
+import Command from "../classes/loaders/Command";
+import CommandHandler from "../classes/loaders/CommandLoader"
+import Settings from "../classes/Settings"
 
 export default new Command(
-  new SlashCommandBuilder().setName("help").setDescription("Prints all commands and corresponding description."),
+  "help",
+  "Help command",
   async (client: Client, message: Interaction) => {
     if (!message) return "Some error occured"
     if (!message.guild) return "Some error occured";
@@ -14,7 +16,7 @@ export default new Command(
 
     const embed = new EmbedBuilder()
       .setTitle("Help")
-      .setColor("#ff0000");
+      .setColor(Settings.successColor);
 
     commands.forEach(command => {
       description += `**Name**: ${command.builder.name}

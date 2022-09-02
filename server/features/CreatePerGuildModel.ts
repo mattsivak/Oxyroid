@@ -1,4 +1,4 @@
-import Feature from "../classes/Features";
+import Feature from "../classes/loaders/Features";
 // import database from "../classes/Database";
 import Logger from "../classes/Logger";
 import GuildModel from "../database/GuildModel";

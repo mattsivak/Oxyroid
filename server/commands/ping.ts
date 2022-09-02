@@ -1,15 +1,13 @@
-import { Client, Interaction, EmbedBuilder, SlashCommandBuilder } from "discord.js";
-import Command from "../classes/Command";
-import Database from "../classes/Database";
+import { Client, Interaction, EmbedBuilder } from "discord.js";
+import Command from "../classes/loaders/Command";
 import ping from "ping";
-
+import Settings from "../classes/Settings"
 export default new Command(
-  new SlashCommandBuilder().setName("ping").setDescription("Messure the latency, API latency and DB latency"),
+  "ping",
+  "SHow ping",
   async (client: Client, message: Interaction) => {
     if (!message) return "Some error occured"
     if (!message.guild) return "Some error occured";
-
-    const DB = new Database();
 
     const resultOfPing = await ping.promise.probe("mongodb.com");
 
@@ -19,7 +17,7 @@ export default new Command(
         `API Latency: ${client.ws.ping}ms\n` +
         `DB Latency: ${Math.floor(parseFloat(resultOfPing.min))}ms`
       )
-      .setColor("#ff0000");
+      .setColor(Settings.successColor);
 
     return embed;
   }
