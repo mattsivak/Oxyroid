@@ -17,12 +17,12 @@ export default class CommandLoader {
   // Load commands
   static async load(): Promise<void> {
     if (!this.client) {
-      Logger.log("CommandLoader: No client provided", "ERR", "COMMANDS", "console|file|discord");
+      Logger.log("No client provided", "ERR", "COMMANDS", "console|file|discord");
       return;
     }
 
     if (this.alreadyLoaded) {
-      Logger.log("CommandLoader: Already loaded", "WARN", "COMMANDS", "console|file|discord");
+      Logger.log("Already loaded", "WARN", "COMMANDS", "console|file|discord");
       return;
     }
 
@@ -46,7 +46,7 @@ export default class CommandLoader {
   // Register commands on single guild
   static async registerCommandsOnApiOnSingleGuild(guildId: string): Promise<void> {
     if (!this.client) {
-      Logger.log("CommandLoader: No client provided", "ERR", "COMMANDS", "console|file|discord");
+      Logger.log("No client provided", "ERR", "COMMANDS", "console|file|discord");
       return;
     }
 
@@ -59,14 +59,14 @@ export default class CommandLoader {
         { data: dataToSend }
       )
     } catch (err) {
-      Logger.log(`CommandLoader: Error while registering commands on API: ${err}`, "ERR", "COMMANDS", "console|file|discord");
+      Logger.log(`Error while registering commands on API: ${err}`, "ERR", "COMMANDS", "console|file|discord");
     }
   }
 
   // Register commands on all guilds
   static async registerCommandsOnApi(): Promise<void> {
     if (!this.client) {
-      Logger.log("CommandLoader: No client provided", "ERR", "COMMANDS", "console|file|discord");
+      Logger.log("No client provided", "ERR", "COMMANDS", "console|file|discord");
       return;
     }
 
@@ -82,14 +82,14 @@ export default class CommandLoader {
 
       Logger.log('Successfully updated slash commands.', 'INFO', 'COMMANDS', "console|file|discord");
     } catch (error) {
-      Logger.log(`CommandLoader: Failed to register commands on API: ${error}`, "ERR", "COMMANDS", "console|file|discord");
+      Logger.log(`Failed to register commands on API: ${error}`, "ERR", "COMMANDS", "console|file|discord");
     }
   }
 
   // Register event handler
   static async registerEventHandler(): Promise<void> {
     if (!this.client) {
-      Logger.log("CommandLoader: No client provided", "ERR", "COMMANDS", "console|file|discord");
+      Logger.log("No client provided", "ERR", "COMMANDS", "console|file|discord");
       return;
     }
 
@@ -99,7 +99,7 @@ export default class CommandLoader {
 
       const command = this.Commands.find(command => command.builder.name.trim() === interaction.commandName);
 
-      if (!command) return Logger.log(`CommandLoader: Command not found: ${interaction.commandName}`, "ERR", "COMMANDS", "console|file|discord");
+      if (!command) return Logger.log(`Command not found: ${interaction.commandName}`, "ERR", "COMMANDS", "console|file|discord");
       try {
         command.run(this.client, interaction).then((output) => {
           if (typeof output === 'string') {
@@ -123,7 +123,7 @@ export default class CommandLoader {
         });
       } catch (err) {
         interaction.reply("Some error occured. Please try again later.")
-        Logger.log(`CommandLoader: Error while executing command ${interaction.commandName}: ${err}`, "ERR", "COMMANDS", "console|file|discord");
+        Logger.log(`Error while executing command ${interaction.commandName}: ${err}`, "ERR", "COMMANDS", "console|file|discord");
       }
     });
   }

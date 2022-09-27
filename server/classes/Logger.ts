@@ -77,7 +77,6 @@ export default class Logger {
 
       client.guilds.fetch(Settings.logsDiscordGuildId).then(guild => {
         guild.channels.create({
-          parent: Settings.logsDiscordCategoryId,
           type: ChannelType.GuildText,
           name: this.firstLogTimeToDiscord as string,
         }).then(channel => {

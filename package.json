@@ -8,9 +8,16 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/express-session": "^1.17.5",
     "nodemon": "^2.0.15"
   },
   "dependencies": {
-    "discord.js.userbot": "^1.0.3"
+    "axios": "^0.27.2",
+    "body-parser": "^1.20.0",
+    "discord.js.userbot": "^1.0.3",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "path": "^0.12.7",
+    "url": "^0.11.0"
   }
 }

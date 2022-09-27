@@ -1,0 +1,1 @@
+[9/5/2022, 3:22:41 PM] [INFO - PROCESS]: Exiting with reason: "SIGUSR2"

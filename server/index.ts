@@ -4,8 +4,10 @@ import Logger from "./classes/Logger";
 import Database from "./classes/Database";
 import FeaturesLoader from "./classes/loaders/FeaturesLoader";
 import CommandLoader from "./classes/loaders/CommandLoader";
+import ButtonsLoader from "./classes/loaders/ButtonLoader";
 import Data from "./classes/Data";
 import startServer from "./express";
+import ButtonLoader from "./classes/loaders/ButtonLoader";
 
 const client = new Discord.Client({
   partials: [Partials.Message, Partials.Channel, Partials.Channel],
@@ -19,10 +21,14 @@ client.on("ready", async () => {
   Data.clientId = client.user?.id || "";
   FeaturesLoader.client = client;
   CommandLoader.client = client;
+  ButtonLoader.client = client;
 
   startServer();
 
   FeaturesLoader.load();
+
+  ButtonsLoader.load();
+  ButtonLoader.registerEventListener()
 
   await CommandLoader.load();
   await CommandLoader.registerCommandsOnApi();
@@ -33,15 +39,13 @@ client.on("ready", async () => {
 
 client.login(Settings.token);
 
-// process.stdin.resume();
-
 let alreadyEded = false;
 
 const date = new Date();
 const dateString = date.toLocaleString();
 
-Logger.log(`| Starting procces. Date and time is ${dateString}\n|\n|`, "INFO", "PROCESS", "file|withoutFormating");
-Logger.log(`Starting procces. Date and time is ${dateString}`, "INFO", "PROCESS", "console");
+Logger.log(`Starting procces. Date and time is ${dateString}\n\n`, "INFO", "PROCESS", "file|withoutFormating");
+Logger.log(`Starting procces. Date and time is ${dateString}`, "INFO", "PROCESS", "console|discord");
 
 function exitHandler(reason: any) {
   if (alreadyEded) return;

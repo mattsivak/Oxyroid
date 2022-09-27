@@ -12,12 +12,12 @@ export default class FeaturesLoader {
   // Load features
   static async load(): Promise<void> {
     if (!this.client) {
-      Logger.log("FeaturesLoader: No client provided", "ERR", "FEATURES", "console|file|discord");
+      Logger.log("No client provided", "ERR", "FEATURES", "console|file|discord");
       return;
     }
 
     if (this.alreadyLoaded) {
-      Logger.log("FeaturesLoader: Already loaded", "WARN", "FEATURES", "console|file|discord");
+      Logger.log("Already loaded", "WARN", "FEATURES", "console|file|discord");
       return;
     }
 
