@@ -12,12 +12,12 @@ export default class FeaturesLoader {
   // Load features
   static async load(): Promise<void> {
     if (!this.client) {
-      Logger.log("No client provided", "ERR", "FEATURES", "console|file|discord");
+      Logger.log("console|file|whatsapp", "No client provided", "ERR", "FEATURES");
       return;
     }
 
     if (this.alreadyLoaded) {
-      Logger.log("Already loaded", "WARN", "FEATURES", "console|file|discord");
+      Logger.log("console|file|whatsapp", "Already loaded", "WARN", "FEATURES");
       return;
     }
 
@@ -30,7 +30,7 @@ export default class FeaturesLoader {
           FeaturesLoader.Features.push(module.default);
           module.default.run(FeaturesLoader.client);
 
-          Logger.log(`Loaded feature: ${file}`, "INFO", "FEATURES", "console|file|discord");
+          Logger.log("console|file", `Loaded feature: ${file}`, "INFO", "FEATURES");
         });
       }
     }

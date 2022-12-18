@@ -17,7 +17,7 @@ const client = new Discord.Client({
 Data.client = client;
 
 client.on("ready", async () => {
-  Logger.log(`Logged in as ${client.user?.tag}`, "INFO", "CLIENT", "console|file|discord");
+  Logger.log("console|file", `Logged in as ${client.user?.tag}`, "INFO", "CLIENT");
   Data.clientId = client.user?.id || "";
   FeaturesLoader.client = client;
   CommandLoader.client = client;
@@ -44,13 +44,13 @@ let alreadyEded = false;
 const date = new Date();
 const dateString = date.toLocaleString();
 
-Logger.log(`Starting procces. Date and time is ${dateString}\n\n`, "INFO", "PROCESS", "file|withoutFormating");
-Logger.log(`Starting procces. Date and time is ${dateString}`, "INFO", "PROCESS", "console|discord");
+Logger.log("file|withoutFormating", `Starting procces. Date and time is ${dateString}\n\n`, "INFO", "PROCESS");
+Logger.log("console", `Starting procces. Date and time is ${dateString}`, "INFO", "PROCESS");
 
 function exitHandler(reason: any) {
   if (alreadyEded) return;
   alreadyEded = true;
-  Logger.log(`Exiting with reason: ${JSON.stringify(reason)}`, "INFO", "PROCESS", "console|file|discord");
+  Logger.log("console|file", `Exiting with reason: ${JSON.stringify(reason)}`, "INFO", "PROCESS");
   setTimeout(() => {
     process.exit(0);
   }, 500);
@@ -65,3 +65,7 @@ process.on('SIGINT', exitHandler.bind(null, "SIGINT"));
 // catches "kill pid" (for example: nodemon restart)
 process.on('SIGUSR1', exitHandler.bind(null, "SIGUSR1"));
 process.on('SIGUSR2', exitHandler.bind(null, "SIGUSR2"));
+
+process.on('uncaughtException', function(err) {
+  Logger.log("console|file|whatsapp", err.message, "ERR", err.stack ? err.stack : "index")
+});

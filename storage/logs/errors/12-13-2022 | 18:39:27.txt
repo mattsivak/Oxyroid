@@ -1,0 +1,29 @@
+Starting procces. Date and time is 12/13/2022, 18:39:27
+
+
+[12/13/2022, 18:39:28] [INFO - CLIENT]: Logged in as Oxyroid#6023
+[12/13/2022, 18:39:28] [INFO - SERVER]: Server listening on port 4000
+[12/13/2022, 18:39:28] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts
+[12/13/2022, 18:39:28] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts
+[12/13/2022, 18:39:28] [INFO - BUTTONS]: Loaded button: test.ts
+[12/13/2022, 18:39:28] [ERR - TSError: ⨯ Unable to compile TypeScript:
+[96mserver/classes/loaders/Command.ts[0m:[93m6[0m:[93m3[0m - [91merror[0m[90m TS2564: [0mProperty 'group' has no initializer and is not definitely assigned in the constructor.
+
+[7m6[0m   group: string;
+[7m [0m [91m  ~~~~~[0m
+
+    at createTSError (/Users/mattsivak/.nvm/versions/node/v19.0.0/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/Users/mattsivak/.nvm/versions/node/v19.0.0/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/Users/mattsivak/.nvm/versions/node/v19.0.0/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/Users/mattsivak/.nvm/versions/node/v19.0.0/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/Users/mattsivak/.nvm/versions/node/v19.0.0/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1213:10)
+    at Object.require.extensions.<computed> [as .ts] (/Users/mattsivak/.nvm/versions/node/v19.0.0/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1037:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:878:12)
+    at Module.require (node:internal/modules/cjs/loader:1061:19)]: ⨯ Unable to compile TypeScript:
+[96mserver/classes/loaders/Command.ts[0m:[93m6[0m:[93m3[0m - [91merror[0m[90m TS2564: [0mProperty 'group' has no initializer and is not definitely assigned in the constructor.
+
+[7m6[0m   group: string;
+[7m [0m [91m  ~~~~~[0m
+

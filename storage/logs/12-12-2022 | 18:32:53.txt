@@ -1,0 +1,18 @@
+Starting procces. Date and time is 12/12/2022, 18:32:53
+
+
+[12/12/2022, 18:32:54] [INFO - CLIENT]: Logged in as Oxyroid#6023
+[12/12/2022, 18:32:54] [INFO - SERVER]: Server listening on port 4000
+[12/12/2022, 18:32:55] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts
+[12/12/2022, 18:32:55] [INFO - BUTTONS]: Loaded button: test.ts
+[12/12/2022, 18:32:55] [INFO - COMMANDS]: Loaded command: clear.ts
+[12/12/2022, 18:32:55] [INFO - COMMANDS]: Loaded command: dump.ts
+[12/12/2022, 18:32:55] [INFO - COMMANDS]: Loaded command: help.ts
+[12/12/2022, 18:32:55] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts
+[12/12/2022, 18:32:55] [INFO - COMMANDS]: Loaded command: ping.ts
+[12/12/2022, 18:32:55] [INFO - COMMANDS]: Successfully updated slash commands.
+[12/12/2022, 18:32:55] [INFO - DB]: Connected to database
+[12/12/2022, 18:32:58] [ERR - Error: idk
+    at Command.run (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/commands/dump.ts:26:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)]: idk
+[12/12/2022, 18:33:16] [INFO - PROCESS]: Exiting with reason: "SIGINT"

@@ -30,6 +30,6 @@ app.use("*", (_req, res) => {
 
 export default function start() {
   app.listen(PORT, () => {
-    Logger.log(`Server listening on port ${PORT.toString()}`, "INFO", "SERVER", "console|file|discord");
+    Logger.log("console|file", `Server listening on port ${PORT.toString()}`, "INFO", "SERVER");
   });
 }

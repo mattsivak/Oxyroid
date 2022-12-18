@@ -12,7 +12,7 @@ export default new Feature("CreatePerGuildModel", (client) => {
   // Get all guilds from database
   GuildModel.find({}, (err: any, docs: any[]) => {
     if (err) {
-      Logger.log(`Error getting guilds from database: ${err}`, "ERR", "DB", "console|file|discord")
+      Logger.log("console|file|whatsapp", `Error getting guilds from database: ${err}`, "ERR", "DB")
     }
 
     // Check if guild is in database
@@ -21,7 +21,7 @@ export default new Feature("CreatePerGuildModel", (client) => {
         // Delete guild from database
         GuildModel.deleteOne({ guildID: guild.guildID }, (err: any) => {
           if (err) {
-            Logger.log(`Error deleting guild from database: ${err}`, "ERR", "DB", "console|file|discord")
+            Logger.log("console|file|whatsapp", `Error deleting guild from database: ${err}`, "ERR", "DB")
           }
         })
       }
@@ -38,7 +38,7 @@ export default new Feature("CreatePerGuildModel", (client) => {
 
         newGuild.save((err: any) => {
           if (err) {
-            Logger.log(`Error creating guild in database: ${err}`, "ERR", "DB", "console|file|discord")
+            Logger.log("console|file|whatsapp", `Error creating guild in database: ${err}`, "ERR", "DB")
           }
         })
       }

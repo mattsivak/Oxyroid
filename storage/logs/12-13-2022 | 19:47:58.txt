@@ -1,0 +1,29 @@
+Starting procces. Date and time is 12/13/2022, 19:47:58
+
+
+[12/13/2022, 19:47:59] [INFO - CLIENT]: Logged in as Oxyroid#6023
+[12/13/2022, 19:47:59] [INFO - SERVER]: Server listening on port 4000
+[12/13/2022, 19:47:59] [INFO - COMMANDS]: Loaded command: clear.ts
+[12/13/2022, 19:48:00] [INFO - COMMANDS]: Loaded command: dump.ts
+[12/13/2022, 19:48:00] [INFO - COMMANDS]: Loaded command: help.ts
+[12/13/2022, 19:48:00] [INFO - COMMANDS]: Loaded command: invite.ts
+[12/13/2022, 19:48:00] [INFO - COMMANDS]: Loaded command: ping.ts
+[12/13/2022, 19:47:59] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts
+[12/13/2022, 19:47:59] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts
+[12/13/2022, 19:47:59] [INFO - BUTTONS]: Loaded button: test.ts
+[12/13/2022, 19:48:00] [INFO - COMMANDS]: Successfully updated slash commands.
+[12/13/2022, 19:48:00] [INFO - DB]: Connected to database
+[12/14/2022, 07:37:40] [INFO - DB]: Reconnected to database
+[12/14/2022, 07:37:40] [INFO - DB]: Connected to database
+[12/14/2022, 07:55:16] [INFO - DB]: Reconnected to database
+[12/14/2022, 07:55:16] [INFO - DB]: Connected to database
+[12/14/2022, 08:06:13] [INFO - DB]: Reconnected to database
+[12/14/2022, 08:06:13] [INFO - DB]: Connected to database
+[12/14/2022, 08:12:57] [INFO - DB]: Reconnected to database
+[12/14/2022, 08:12:57] [INFO - DB]: Connected to database
+[12/14/2022, 08:18:19] [INFO - DB]: Reconnected to database
+[12/14/2022, 08:18:19] [INFO - DB]: Connected to database
+[12/14/2022, 08:28:32] [INFO - DB]: Reconnected to database
+[12/14/2022, 08:28:32] [INFO - DB]: Connected to database
+[12/14/2022, 08:33:06] [INFO - DB]: Reconnected to database
+[12/14/2022, 08:33:06] [INFO - DB]: Connected to database

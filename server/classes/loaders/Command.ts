@@ -1,28 +1,39 @@
 import { SlashCommandBuilder } from '@discordjs/builders';
 import { Client, Interaction, InteractionReplyOptions, EmbedBuilder } from 'discord.js';
 
-export default class Command {
-  run: (client: Client, message: Interaction) => Promise<string | EmbedBuilder | InteractionReplyOptions>;
-  builder: SlashCommandBuilder;
-
-  constructor(name: string, description: string, run: (client: Client, message: Interaction) => Promise<string | EmbedBuilder | InteractionReplyOptions>, options?: Array<{
+export type CommandOptions = {
+  name: string,
+  description: string,
+  group?: Groups,
+  options?: Array<{
     type: 'string' | 'integer' | 'number' | 'boolean' | 'user' | 'channel' | 'role' | 'mentionable' | 'attachment',
     name: string,
     description: string,
     required: boolean,
-}>) {
-    this.builder = new SlashCommandBuilder().setName(name).setDescription(description)   
+  }>
+}
+
+export type Groups = "utility" | "fun" | "administrative" | "developer" | "random"
+export default class Command {
+  public run: (client: Client, message: Interaction) => Promise<string | EmbedBuilder | InteractionReplyOptions>;
+  public builder: SlashCommandBuilder;
+  public options: CommandOptions;
+
+  constructor(commandOptions: CommandOptions, run: (client: Client, message: Interaction) => Promise<string | EmbedBuilder | InteractionReplyOptions>) {
+    this.options = commandOptions;
+    const {name, description, group, options} = commandOptions;
+    this.builder = new SlashCommandBuilder().setName(name).setDescription(description)
     this.run = run
-  
+
     options?.forEach(option => {
       switch (option.type) {
-        case "string": 
+        case "string":
           this.builder.addStringOption(o => {
             return o.setName(option.name).setDescription(option.description).setRequired(option.required)
           })
           break
 
-        case "number": 
+        case "number":
           this.builder.addNumberOption(o => {
             return o.setName(option.name).setDescription(option.description).setRequired(option.required)
           })
@@ -30,7 +41,7 @@ export default class Command {
 
         case "user":
           this.builder.addUserOption(o => {
-            return o.setName(option.name).setDescription(option.description).setRequired(option.required) 
+            return o.setName(option.name).setDescription(option.description).setRequired(option.required)
           })
           break
 
@@ -60,7 +71,7 @@ export default class Command {
 
         case "mentionable":
           this.builder.addMentionableOption(o => {
-            return o.setName(option.name).setDescription(option.description).setRequired(option.required) 
+            return o.setName(option.name).setDescription(option.description).setRequired(option.required)
           })
           break
 
@@ -70,6 +81,6 @@ export default class Command {
           })
           break
       }
-    }) 
+    })
   }
 }

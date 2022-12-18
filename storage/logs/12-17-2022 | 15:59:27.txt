@@ -1,0 +1,15 @@
+Starting procces. Date and time is 12/17/2022, 15:59:27
+
+
+[12/17/2022, 15:59:27] [INFO - CLIENT]: Logged in as Oxyroid#6023
+[12/17/2022, 15:59:28] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts
+[12/17/2022, 15:59:28] [INFO - COMMANDS]: Loaded command: clear.ts
+[12/17/2022, 15:59:28] [INFO - COMMANDS]: Loaded command: dump.ts
+[12/17/2022, 15:59:28] [INFO - COMMANDS]: Loaded command: help.ts
+[12/17/2022, 15:59:28] [INFO - COMMANDS]: Loaded command: invite.ts
+[12/17/2022, 15:59:28] [INFO - COMMANDS]: Loaded command: ping.ts
+[12/17/2022, 15:59:28] [INFO - BUTTONS]: Loaded button: test.ts
+[12/17/2022, 15:59:27] [INFO - SERVER]: Server listening on port 4000
+[12/17/2022, 15:59:28] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts
+[12/17/2022, 15:59:29] [INFO - COMMANDS]: Successfully updated slash commands.
+[12/17/2022, 15:59:29] [INFO - DB]: Connected to database

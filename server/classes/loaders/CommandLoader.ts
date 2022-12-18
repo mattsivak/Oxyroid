@@ -17,12 +17,12 @@ export default class CommandLoader {
   // Load commands
   static async load(): Promise<void> {
     if (!this.client) {
-      Logger.log("No client provided", "ERR", "COMMANDS", "console|file|discord");
+      Logger.log("console|file|whatsapp", "No client provided", "ERR", "COMMANDS");
       return;
     }
 
     if (this.alreadyLoaded) {
-      Logger.log("Already loaded", "WARN", "COMMANDS", "console|file|discord");
+      Logger.log("console|file|whatsapp", "Already loaded", "WARN", "COMMANDS");
       return;
     }
 
@@ -36,7 +36,7 @@ export default class CommandLoader {
         CommandLoader.Commands.push(module.default);
         module.default.run(CommandLoader.client);
 
-        Logger.log(`Loaded command: ${file}`, "INFO", "COMMANDS", "console|file|discord");
+        Logger.log("console|file", `Loaded command: ${file}`, "INFO", "COMMANDS");
       }
     }
 
@@ -46,7 +46,7 @@ export default class CommandLoader {
   // Register commands on single guild
   static async registerCommandsOnApiOnSingleGuild(guildId: string): Promise<void> {
     if (!this.client) {
-      Logger.log("No client provided", "ERR", "COMMANDS", "console|file|discord");
+      Logger.log("console|file|whatsapp", "No client provided", "ERR", "COMMANDS");
       return;
     }
 
@@ -59,14 +59,14 @@ export default class CommandLoader {
         { data: dataToSend }
       )
     } catch (err) {
-      Logger.log(`Error while registering commands on API: ${err}`, "ERR", "COMMANDS", "console|file|discord");
+      Logger.log("console|file|whatsapp", `Error while registering commands on API: ${err}`, "ERR", "COMMANDS");
     }
   }
 
   // Register commands on all guilds
   static async registerCommandsOnApi(): Promise<void> {
     if (!this.client) {
-      Logger.log("No client provided", "ERR", "COMMANDS", "console|file|discord");
+      Logger.log("console|file|whatsapp", "No client provided", "ERR", "COMMANDS");
       return;
     }
 
@@ -80,16 +80,16 @@ export default class CommandLoader {
       );
 
 
-      Logger.log('Successfully updated slash commands.', 'INFO', 'COMMANDS', "console|file|discord");
+      Logger.log("console|file", 'Successfully updated slash commands.', 'INFO', 'COMMANDS');
     } catch (error) {
-      Logger.log(`Failed to register commands on API: ${error}`, "ERR", "COMMANDS", "console|file|discord");
+      Logger.log("console|file|whatsapp", `Failed to register commands on API: ${error}`, "ERR", "COMMANDS");
     }
   }
 
   // Register event handler
   static async registerEventHandler(): Promise<void> {
     if (!this.client) {
-      Logger.log("No client provided", "ERR", "COMMANDS", "console|file|discord");
+      Logger.log("console|file|whatsapp", "No client provided", "ERR", "COMMANDS");
       return;
     }
 
@@ -99,8 +99,11 @@ export default class CommandLoader {
 
       const command = this.Commands.find(command => command.builder.name.trim() === interaction.commandName);
 
-      if (!command) return Logger.log(`Command not found: ${interaction.commandName}`, "ERR", "COMMANDS", "console|file|discord");
+      if (!command) return Logger.log("console|file|whatsapp", `Command not found: ${interaction.commandName}`, "ERR", "COMMANDS");
       try {
+        if (Settings.debugMode) {
+          Logger.log("console|file", `Command used: ${command.builder.name}`, "DEB", "COMMANDS")
+        }
         command.run(this.client, interaction).then((output) => {
           if (typeof output === 'string') {
             const embed = new EmbedBuilder().setTitle(output).setFooter({ text: `Command executed by ${interaction.user.tag}` });
@@ -123,7 +126,7 @@ export default class CommandLoader {
         });
       } catch (err) {
         interaction.reply("Some error occured. Please try again later.")
-        Logger.log(`Error while executing command ${interaction.commandName}: ${err}`, "ERR", "COMMANDS", "console|file|discord");
+        Logger.log("console|file|whatsapp", `Error while executing command ${interaction.commandName}: ${err}`, "ERR", "COMMANDS");
       }
     });
   }

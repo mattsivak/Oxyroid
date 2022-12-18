@@ -3,11 +3,19 @@ import Command from "../classes/loaders/Command";
 import Settings from "../classes/Settings"
 
 export default new Command(
-  "clear",
-  "Clear channel",
-  async (_client: Client, message: Interaction) => {
-
-
+  {
+    name: "clear",
+    description: "Clears given amount of messages",
+    options: [
+      {
+        name: "count",
+        description: "Count of messages to delete",
+        required: true,
+        type: "number"
+      }
+    ]
+  },
+  async (_client: Client, message: Interaction) => { 
     if (!message) return "Some error occured"
     if (!message.guild) return "Some error occured";
 
@@ -35,13 +43,5 @@ export default new Command(
       .setColor(Settings.successColor);
 
     return embed;
-  },
-  [
-    {
-      name: "count",
-      description: "Count of messages to delete",
-      required: true,
-      type: "number"
-    }
-  ]
+  }
 )

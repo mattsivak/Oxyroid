@@ -2,10 +2,14 @@ import { Client, Interaction, EmbedBuilder, ActionRowBuilder, ButtonBuilder, But
 import Command from "../classes/loaders/Command";
 import GuildModel from "../database/GuildModel";
 import Settings from "../classes/Settings"
+import { group } from "console";
 
 export default new Command(
-  "dump",
-  "test",
+  {
+    name: "dump",
+    description: "test",
+    group: "developer",
+  },
   async (_client: Client, message: Interaction) => {
     if (!message) return "Some error occured"
     if (!message.guild) return "Some error occured";
@@ -22,6 +26,8 @@ export default new Command(
     const row = new ActionRowBuilder().addComponents(
       new ButtonBuilder().setCustomId("delete_message").setLabel("Click me!").setStyle(ButtonStyle.Primary)
     )
+
+    // throw new Error("idk")
 
     return {
       embeds: [embed],

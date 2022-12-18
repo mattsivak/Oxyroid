@@ -1,0 +1,19 @@
+Starting procces. Date and time is 12/13/2022, 18:20:03
+
+
+[12/13/2022, 18:20:04] [INFO - CLIENT]: Logged in as Oxyroid#6023
+[12/13/2022, 18:20:04] [INFO - SERVER]: Server listening on port 4000
+[12/13/2022, 18:20:04] [INFO - COMMANDS]: Loaded command: clear.ts
+[12/13/2022, 18:20:04] [INFO - COMMANDS]: Loaded command: dump.ts
+[12/13/2022, 18:20:04] [INFO - COMMANDS]: Loaded command: help.ts
+[12/13/2022, 18:20:04] [INFO - COMMANDS]: Loaded command: ping.ts
+[12/13/2022, 18:20:04] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts
+[12/13/2022, 18:20:04] [INFO - BUTTONS]: Loaded button: test.ts
+[12/13/2022, 18:20:04] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts
+[12/13/2022, 18:20:05] [INFO - COMMANDS]: Successfully updated slash commands.
+[12/13/2022, 18:20:05] [INFO - DB]: Connected to database
+[12/13/2022, 18:20:17] [DEBUG - COMMANDS]: Command used: dump
+[12/13/2022, 18:20:17] [ERR - Error: idk
+    at Command.run (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/commands/dump.ts:26:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)]: idk
+[12/13/2022, 18:21:36] [INFO - PROCESS]: Exiting with reason: "SIGUSR2"

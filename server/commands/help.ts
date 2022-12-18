@@ -4,8 +4,11 @@ import CommandHandler from "../classes/loaders/CommandLoader"
 import Settings from "../classes/Settings"
 
 export default new Command(
-  "help",
-  "Help command",
+  {
+    name: "help",
+    description: "Shows help message.",
+    group: "utility"
+  },
   async (client: Client, message: Interaction) => {
     if (!message) return "Some error occured"
     if (!message.guild) return "Some error occured";
@@ -21,7 +24,7 @@ export default new Command(
     commands.forEach(command => {
       description += `**Name**: ${command.builder.name}
                       **Description**: ${command.builder.description}
-                      
+                      ${command.options.group !== undefined ? `**Group**: ${command.options.group}` : ""}
                       `
     })
 

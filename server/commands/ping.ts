@@ -3,8 +3,11 @@ import Command from "../classes/loaders/Command";
 import ping from "ping";
 import Settings from "../classes/Settings"
 export default new Command(
-  "ping",
-  "SHow ping",
+  {
+    name: "ping",
+    description: "Shows bot's ping",
+    group: "fun"
+  },
   async (client: Client, message: Interaction) => {
     if (!message) return "Some error occured"
     if (!message.guild) return "Some error occured";

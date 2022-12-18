@@ -18,13 +18,13 @@ export default class DB {
       mongoose.connect(Settings.db);
 
       this.mongoose.connection.on("error", (err) => {
-        Logger.log(`Error connecting to database: ${err}`, "ERR", "DB", "console|file|discord")
+        Logger.log("console|file|whatsapp", `Error connecting to database: ${err}`, "ERR", "DB")
       });
       this.mongoose.connection.on("open", () => {
-        Logger.log("Connected to database", "INFO", "DB", "console|file|discord")
+        Logger.log("console|file", "Connected to database", "INFO", "DB")
       });
       this.mongoose.connection.on("reconnect", () => {
-        Logger.log("Reconnected to database", "INFO", "DB", "console|file|discord")
+        Logger.log("console|file", "Reconnected to database", "INFO", "DB")
       })
     }
   }
