@@ -2,7 +2,6 @@ import { Client, Interaction, EmbedBuilder, ActionRowBuilder, ButtonBuilder, But
 import Command from "../classes/loaders/Command";
 import GuildModel from "../database/GuildModel";
 import Settings from "../classes/Settings"
-import { group } from "console";
 
 export default new Command(
   {

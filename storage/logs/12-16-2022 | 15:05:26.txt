@@ -1,9 +1,0 @@
-Starting procces. Date and time is 12/16/2022, 15:05:26
-
-
-[12/16/2022, 15:05:36] [ERR - ConnectTimeoutError: Connect Timeout Error
-    at onConnectTimeout (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/node_modules/undici/lib/core/connect.js:176:24)
-    at /Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/node_modules/undici/lib/core/connect.js:123:46
-    at Immediate._onImmediate (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/node_modules/undici/lib/core/connect.js:164:9)
-    at processImmediate (node:internal/timers:471:21)]: Connect Timeout Error
-[12/16/2022, 15:05:39] [INFO - PROCESS]: Exiting with reason: "SIGUSR2"

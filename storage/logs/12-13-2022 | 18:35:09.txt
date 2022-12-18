@@ -1,4 +1,0 @@
-Starting procces. Date and time is 12/13/2022, 18:35:09
-
-
-[12/13/2022, 18:35:09] [INFO - PROCESS]: Exiting with reason: "SIGUSR2"
