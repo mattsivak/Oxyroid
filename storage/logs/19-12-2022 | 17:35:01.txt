@@ -1,0 +1,16 @@
+Starting procces. Date and time is 19/12/2022, 17:35:01
+
+
+[19/12/2022, 17:35:02] [INFO - CLIENT]: Logged in as Oxyroid#6023
+[19/12/2022, 17:35:02] [INFO - BUTTONS]: Loaded button: test.ts
+[19/12/2022, 17:35:02] [INFO - COMMANDS]: Loaded command: clear.ts
+[19/12/2022, 17:35:03] [INFO - COMMANDS]: Loaded command: dump.ts
+[19/12/2022, 17:35:03] [INFO - COMMANDS]: Loaded command: help.ts
+[19/12/2022, 17:35:03] [INFO - COMMANDS]: Loaded command: invite.ts
+[19/12/2022, 17:35:03] [INFO - COMMANDS]: Loaded command: ping.ts
+[19/12/2022, 17:35:02] [INFO - SERVER]: Server listening on port 4000
+[19/12/2022, 17:35:02] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts
+[19/12/2022, 17:35:02] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts
+[19/12/2022, 17:35:03] [INFO - COMMANDS]: Successfully updated slash commands.
+[19/12/2022, 17:35:03] [INFO - DB]: Connected to database
+[19/12/2022, 17:37:47] [INFO - PROCESS]: Exiting with reason: "SIGUSR2"

@@ -9,6 +9,6 @@ export default class Settings {
   static successColor: ColorResolvable = "#7fff00"
   static errorColor: ColorResolvable = "#ff0000"
   static warningColor: ColorResolvable = "#efaf00"
-  static debugMode: boolean = true
+  static debugMode: boolean = true 
 }
 // mongodb+srv://bialu:BialuJeTop@cluster0.g5vfi.mongodb.net/discord

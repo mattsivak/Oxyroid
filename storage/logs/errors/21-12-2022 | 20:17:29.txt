@@ -1,0 +1,18 @@
+Starting procces. Date and time is 21/12/2022, 20:17:29
+
+
+[21/12/2022, 20:17:30] [INFO - CLIENT]: Logged in as Oxyroid#6023
+[21/12/2022, 20:17:30] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts
+[21/12/2022, 20:17:30] [INFO - SERVER]: Server listening on port 4000
+[21/12/2022, 20:17:30] [INFO - BUTTONS]: Loaded button: test.ts
+[21/12/2022, 20:17:30] [ERR - COMMANDS]: Failed loading of command: ${file} due to TSError: ⨯ Unable to compile TypeScript:
+[96mcommands/clear.ts[0m:[93m28[0m:[93m3[0m - [91merror[0m[90m TS2304: [0mCannot find name 'asd'.
+
+[7m28[0m   asd
+[7m  [0m [91m  ~~~[0m
+
+[21/12/2022, 20:17:30] [ERR - TypeError: Cannot read properties of undefined (reading 'default')
+    at Function.load (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/classes/loaders/CommandLoader.ts:38:44)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Client.<anonymous> (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/index.ts:33:3)]: Cannot read properties of undefined (reading 'default')
+[21/12/2022, 20:17:30] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts

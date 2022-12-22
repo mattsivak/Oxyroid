@@ -1,0 +1,27 @@
+Starting procces. Date and time is 19/12/2022, 16:13:54
+
+
+[19/12/2022, 16:13:55] [INFO - CLIENT]: Logged in as Oxyroid#6023
+[19/12/2022, 16:13:56] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts
+[19/12/2022, 16:13:56] [INFO - COMMANDS]: Loaded command: clear.ts
+[19/12/2022, 16:13:56] [INFO - COMMANDS]: Loaded command: dump.ts
+[19/12/2022, 16:13:56] [INFO - COMMANDS]: Loaded command: help.ts
+[19/12/2022, 16:13:56] [INFO - COMMANDS]: Loaded command: invite.ts
+[19/12/2022, 16:13:56] [INFO - COMMANDS]: Loaded command: ping.ts
+[19/12/2022, 16:13:55] [INFO - SERVER]: Server listening on port 4000
+[19/12/2022, 16:13:56] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts
+[19/12/2022, 16:13:56] [INFO - BUTTONS]: Loaded button: test.ts
+[19/12/2022, 16:13:57] [INFO - COMMANDS]: Successfully updated slash commands.
+[19/12/2022, 16:13:57] [INFO - DB]: Connected to database
+[19/12/2022, 16:23:55] [DEB - COMMANDS]: Command used: help
+[19/12/2022, 16:23:55] [ERR - Error: Received one or more errors
+    at ArrayValidator.handle (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/node_modules/@sapphire/shapeshift/src/validators/ArrayValidator.ts:21:14)
+    at ArrayValidator.parse (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/node_modules/@sapphire/shapeshift/src/validators/BaseValidator.ts:102:48)
+    at EmbedBuilder.addFields (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/node_modules/@discordjs/builders/src/messages/embed/Embed.ts:23:31)
+    at /Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/commands/help.ts:28:13
+    at Array.forEach (<anonymous>)
+    at Command.run (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/commands/help.ts:27:12)
+    at Client.<anonymous> (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/classes/loaders/CommandLoader.ts:107:17)
+    at Client.emit (node:events:525:35)
+    at Client.emit (node:domain:489:12)
+    at InteractionCreateAction.handle (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/node_modules/discord.js/src/client/actions/InteractionCreate.js:81:12)]: Received one or more errors

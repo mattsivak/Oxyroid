@@ -1,10 +1,16 @@
 import { SlashCommandBuilder } from '@discordjs/builders';
 import { Client, Interaction, InteractionReplyOptions, EmbedBuilder } from 'discord.js';
+import Logger from '../Logger';
 
 export type CommandOptions = {
   name: string,
   description: string,
-  group?: Groups,
+  group: string,
+
+  run: (client: Client, message: Interaction) => Promise<string | EmbedBuilder | InteractionReplyOptions>
+
+  afterGen?: (builder: SlashCommandBuilder) => void
+
   options?: Array<{
     type: 'string' | 'integer' | 'number' | 'boolean' | 'user' | 'channel' | 'role' | 'mentionable' | 'attachment',
     name: string,
@@ -13,15 +19,14 @@ export type CommandOptions = {
   }>
 }
 
-export type Groups = "utility" | "fun" | "administrative" | "developer" | "random"
 export default class Command {
   public run: (client: Client, message: Interaction) => Promise<string | EmbedBuilder | InteractionReplyOptions>;
   public builder: SlashCommandBuilder;
   public options: CommandOptions;
 
-  constructor(commandOptions: CommandOptions, run: (client: Client, message: Interaction) => Promise<string | EmbedBuilder | InteractionReplyOptions>) {
+  constructor(commandOptions: CommandOptions) {
     this.options = commandOptions;
-    const {name, description, group, options} = commandOptions;
+    const {name, description, group, options, run, afterGen} = commandOptions;
     this.builder = new SlashCommandBuilder().setName(name).setDescription(description)
     this.run = run
 
@@ -82,5 +87,13 @@ export default class Command {
           break
       }
     })
+
+    if (afterGen) {
+      try {
+        afterGen(this.builder)
+      } catch (err) {
+        Logger.log("console|file|whatsapp", "An error occured while trying to run afterGen function on command " + name, "ERR", "command")
+      }
+    }
   }
 }

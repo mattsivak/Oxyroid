@@ -32,7 +32,9 @@ export default class CommandLoader {
     for (const file of files) {
 
       if (file.endsWith('.ts')) {
-        const module = await import(path.join(dir, file))
+        const module = await import(path.join(dir, file)).catch((err) => {
+          Logger.log("console|file|whatsapp", "Failed loading of command: ${file} due to " + err, "ERR", "COMMANDS")
+        })
         CommandLoader.Commands.push(module.default);
         module.default.run(CommandLoader.client);
 

@@ -1,0 +1,37 @@
+Starting procces. Date and time is 19/12/2022, 16:10:34
+
+
+[19/12/2022, 16:10:35] [INFO - CLIENT]: Logged in as Oxyroid#6023
+[19/12/2022, 16:10:35] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts
+[19/12/2022, 16:10:35] [INFO - BUTTONS]: Loaded button: test.ts
+[19/12/2022, 16:10:35] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts
+[19/12/2022, 16:10:35] [INFO - COMMANDS]: Loaded command: clear.ts
+[19/12/2022, 16:10:36] [INFO - COMMANDS]: Loaded command: dump.ts
+[19/12/2022, 16:10:36] [ERR - TSError: ⨯ Unable to compile TypeScript:
+[96mcommands/help.ts[0m:[93m27[0m:[93m20[0m - [91merror[0m[90m TS2345: [0mArgument of type '(group: string) => void' is not assignable to parameter of type '(value: Groups | undefined, index: number, array: (Groups | undefined)[]) => void'.
+  Types of parameters 'group' and 'value' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+
+[7m27[0m     groups.forEach((group: string) => {
+[7m  [0m [91m                   ~~~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1213:10)
+    at Object.require.extensions.<computed> [as .ts] (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1037:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:878:12)
+    at Module.require (node:internal/modules/cjs/loader:1061:19)]: ⨯ Unable to compile TypeScript:
+[96mcommands/help.ts[0m:[93m27[0m:[93m20[0m - [91merror[0m[90m TS2345: [0mArgument of type '(group: string) => void' is not assignable to parameter of type '(value: Groups | undefined, index: number, array: (Groups | undefined)[]) => void'.
+  Types of parameters 'group' and 'value' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+
+[7m27[0m     groups.forEach((group: string) => {
+[7m  [0m [91m                   ~~~~~~~~~~~~~~~~~~~~[0m
+
+[19/12/2022, 16:10:35] [INFO - SERVER]: Server listening on port 4000

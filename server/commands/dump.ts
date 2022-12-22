@@ -8,29 +8,31 @@ export default new Command(
     name: "dump",
     description: "test",
     group: "developer",
-  },
-  async (_client: Client, message: Interaction) => {
-    if (!message) return "Some error occured"
-    if (!message.guild) return "Some error occured";
-    const guildId = message.guild.id;
-    const guild = await GuildModel.findOne({ id: guildId });
 
-    const embed = new EmbedBuilder()
-      .setTitle("Dump")
-      .setDescription(
-        JSON.stringify(guild, null, 2)
+    // functions
+    run:  async (client: Client, message: Interaction) => {
+      if (!message) return "Some error occured"
+      if (!message.guild) return "Some error occured";
+      const guildId = message.guild.id;
+      const guild = await GuildModel.findOne({ id: guildId });
+  
+      const embed = new EmbedBuilder()
+        .setTitle("Dump")
+        .setDescription(
+          JSON.stringify(guild, null, 2)
+        )
+        .setColor(Settings.successColor);
+  
+      const row = new ActionRowBuilder().addComponents(
+        new ButtonBuilder().setCustomId("delete_message").setLabel("Click me!").setStyle(ButtonStyle.Primary)
       )
-      .setColor(Settings.successColor);
-
-    const row = new ActionRowBuilder().addComponents(
-      new ButtonBuilder().setCustomId("delete_message").setLabel("Click me!").setStyle(ButtonStyle.Primary)
-    )
-
-    // throw new Error("idk")
-
-    return {
-      embeds: [embed],
-      components: [row],
-    } as InteractionReplyOptions;
-  }
+  
+      // throw new Error("idk")
+  
+      return {
+        embeds: [embed],
+        components: [row],
+      } as InteractionReplyOptions;
+    }
+  },
 )
