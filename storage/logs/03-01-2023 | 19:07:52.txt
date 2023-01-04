@@ -1,0 +1,17 @@
+Starting procces. Date and time is 03/01/2023, 19:07:52
+
+
+[03/01/2023, 19:07:54] [INFO - CLIENT]: Logged in as Oxyroid#6023
+[03/01/2023, 19:07:55] [INFO - BUTTONS]: Loaded button: deleteMe.ts
+[03/01/2023, 19:07:55] [INFO - COMMANDS]: Loaded command: clear.ts
+[03/01/2023, 19:07:55] [INFO - BUTTONS]: Loaded button: helpCategory.ts
+[03/01/2023, 19:07:55] [INFO - COMMANDS]: Loaded command: dump.ts
+[03/01/2023, 19:07:55] [INFO - COMMANDS]: Loaded command: help.ts
+[03/01/2023, 19:07:55] [INFO - COMMANDS]: Loaded command: invite.ts
+[03/01/2023, 19:07:55] [INFO - COMMANDS]: Loaded command: ping.ts
+[03/01/2023, 19:07:55] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts
+[03/01/2023, 19:07:55] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts
+[03/01/2023, 19:07:54] [INFO - SERVER]: Server listening on port 4000
+[03/01/2023, 19:07:56] [INFO - DB]: Connected to database
+[03/01/2023, 19:07:57] [INFO - COMMANDS]: Successfully updated slash commands.
+[03/01/2023, 19:08:21] [INFO - PROCESS]: Exiting with reason: "SIGUSR2"

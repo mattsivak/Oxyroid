@@ -1,0 +1,32 @@
+Starting procces. Date and time is 04/01/2023, 14:46:51
+
+
+[04/01/2023, 14:46:51] [INFO - CLIENT]: Logged in as Oxyroid#6023
+[04/01/2023, 14:46:51] [INFO - SERVER]: Server listening on port 4000
+[04/01/2023, 14:46:52] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts
+[04/01/2023, 14:46:52] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts
+[04/01/2023, 14:46:52] [INFO - BUTTONS]: Loaded button: deleteMe.ts
+[04/01/2023, 14:46:52] [INFO - COMMANDS]: Loaded command: clear.ts
+[04/01/2023, 14:46:52] [INFO - BUTTONS]: Loaded button: helpCategory.ts
+[04/01/2023, 14:46:52] [INFO - COMMANDS]: Loaded command: dump.ts
+[04/01/2023, 14:46:52] [INFO - COMMANDS]: Loaded command: help.ts
+[04/01/2023, 14:46:52] [INFO - COMMANDS]: Loaded command: ping.ts
+[04/01/2023, 14:46:52] [ERR - COMMANDS]: Failed loading of command: ${file} due to TSError: ⨯ Unable to compile TypeScript:
+[96mserver/commands/play.ts[0m:[93m21[0m:[93m41[0m - [91merror[0m[90m TS2345: [0mArgument of type 'string | null' is not assignable to parameter of type 'string'.
+  Type 'null' is not assignable to type 'string'.
+
+[7m21[0m     let queue = Data.player.createQueue(message.guildId)
+[7m  [0m [91m                                        ~~~~~~~~~~~~~~~[0m
+[96mserver/commands/play.ts[0m:[93m25[0m:[93m22[0m - [91merror[0m[90m TS2345: [0mArgument of type 'string | null | undefined' is not assignable to parameter of type 'GuildChannelResolvable'.
+  Type 'undefined' is not assignable to type 'GuildChannelResolvable'.
+
+[7m25[0m     await queue.join(member?.voice.channelId)
+[7m  [0m [91m                     ~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[04/01/2023, 14:46:52] [ERR - TypeError: Cannot read properties of undefined (reading 'default')
+    at Function.load (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/classes/loaders/CommandLoader.ts:38:44)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Client.<anonymous> (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/index.ts:36:3)]: Cannot read properties of undefined (reading 'default')
+[04/01/2023, 14:46:52] [INFO - COMMANDS]: Loaded command: invite.ts
+[04/01/2023, 14:46:53] [INFO - DB]: Connected to database
+[04/01/2023, 14:47:08] [INFO - PROCESS]: Exiting with reason: "SIGUSR2"

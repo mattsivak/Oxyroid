@@ -1,0 +1,19 @@
+Starting procces. Date and time is 25/12/2022, 11:47:19
+
+
+[25/12/2022, 11:47:19] [INFO - CLIENT]: Logged in as Oxyroid#6023
+[25/12/2022, 11:47:19] [INFO - SERVER]: Server listening on port 4000
+[25/12/2022, 11:47:21] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts
+[25/12/2022, 11:47:21] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts
+[25/12/2022, 11:47:21] [INFO - BUTTONS]: Loaded button: test.ts
+[25/12/2022, 11:47:21] [ERR - COMMANDS]: Failed loading of command: ${file} due to TSError: ⨯ Unable to compile TypeScript:
+[96mserver/commands/clear.ts[0m:[93m50[0m:[93m46[0m - [91merror[0m[90m TS2339: [0mProperty 'size' does not exist on type 'Collection<string, Message<boolean>> | "I can't delete messages that are older then 14 days. It is discord limitation."'.
+  Property 'size' does not exist on type '"I can't delete messages that are older then 14 days. It is discord limitation."'.
+
+[7m50[0m         .setDescription(`Deleted ${messages?.size} messages`)
+[7m  [0m [91m                                             ~~~~[0m
+
+[25/12/2022, 11:47:21] [ERR - TypeError: Cannot read properties of undefined (reading 'default')
+    at Function.load (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/classes/loaders/CommandLoader.ts:38:44)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Client.<anonymous> (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/index.ts:33:3)]: Cannot read properties of undefined (reading 'default')

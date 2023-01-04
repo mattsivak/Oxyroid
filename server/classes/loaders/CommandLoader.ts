@@ -1,5 +1,5 @@
 import fs from 'fs';
-import path from 'path';
+import path, { join } from 'path';
 import Logger from './../Logger';
 import Settings from './../Settings';
 import { Client, EmbedBuilder } from 'discord.js';
@@ -15,7 +15,7 @@ export default class CommandLoader {
   static rest = new REST({ version: '9' }).setToken(Settings.token);
 
   // Load commands
-  static async load(): Promise<void> {
+  static async load(directory?: string): Promise<void> {
     if (!this.client) {
       Logger.log("console|file|whatsapp", "No client provided", "ERR", "COMMANDS");
       return;
@@ -26,21 +26,26 @@ export default class CommandLoader {
       return;
     }
 
-    const dir = path.join(__dirname, '../../commands');
+    const dir = path.join(__dirname, directory || '../../commands');
     const files = fs.readdirSync(dir);
 
     for (const file of files) {
-
       if (file.endsWith('.ts')) {
         const module = await import(path.join(dir, file)).catch((err) => {
-          Logger.log("console|file|whatsapp", "Failed loading of command: ${file} due to " + err, "ERR", "COMMANDS")
+          Logger.log("console|file|whatsapp", `Failed loading of command: ${file} due to ` + err, "ERR", "COMMANDS")
         })
         CommandLoader.Commands.push(module.default);
-        module.default.run(CommandLoader.client);
 
         Logger.log("console|file", `Loaded command: ${file}`, "INFO", "COMMANDS");
+      } else {        
+        const status = fs.statSync(join(dir, file))
+        if (status.isDirectory()) {
+          await this.load(join(directory || '../../commands', file))
+        }
       }
     }
+
+    await this.registerCommandsOnApi()
 
     this.alreadyLoaded = true;
   }
@@ -107,6 +112,7 @@ export default class CommandLoader {
           Logger.log("console|file", `Command used: ${command.builder.name}`, "DEB", "COMMANDS")
         }
         command.run(this.client, interaction).then((output) => {
+          if (output === false) return
           if (typeof output === 'string') {
             const embed = new EmbedBuilder().setTitle(output).setFooter({ text: `Command executed by ${interaction.user.tag}` });
             interaction.reply({ embeds: [embed] });

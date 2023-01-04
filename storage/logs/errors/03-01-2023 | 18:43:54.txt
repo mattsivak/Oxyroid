@@ -1,0 +1,32 @@
+Starting procces. Date and time is 03/01/2023, 18:43:54
+
+
+[03/01/2023, 18:43:54] [INFO - CLIENT]: Logged in as Oxyroid#6023
+[03/01/2023, 18:43:55] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts
+[03/01/2023, 18:43:55] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts
+[03/01/2023, 18:43:55] [INFO - BUTTONS]: Loaded button: deleteMe.ts
+[03/01/2023, 18:43:55] [INFO - COMMANDS]: Loaded command: clear.ts
+[03/01/2023, 18:43:55] [INFO - BUTTONS]: Loaded button: helpCategory.ts
+[03/01/2023, 18:43:55] [INFO - COMMANDS]: Loaded command: dump.ts
+[03/01/2023, 18:43:55] [INFO - COMMANDS]: Loaded command: exit.ts
+[03/01/2023, 18:43:55] [INFO - COMMANDS]: Loaded command: help.ts
+[03/01/2023, 18:43:55] [INFO - COMMANDS]: Loaded command: invite.ts
+[03/01/2023, 18:43:56] [INFO - COMMANDS]: Loaded command: pause.ts
+[03/01/2023, 18:43:56] [INFO - COMMANDS]: Loaded command: ping.ts
+[03/01/2023, 18:43:56] [ERR - COMMANDS]: Failed loading of command: ${file} due to TSError: ⨯ Unable to compile TypeScript:
+[96mserver/commands/play.ts[0m:[93m9[0m:[93m3[0m - [91merror[0m[90m TS2322: [0mType '(client: Client<boolean>, message: Interaction<CacheType>) => void' is not assignable to type '(client: Client<boolean>, message: Interaction<CacheType>) => Promise<string | EmbedBuilder | InteractionReplyOptions>'.
+  Type 'void' is not assignable to type 'Promise<string | EmbedBuilder | InteractionReplyOptions>'.
+
+[7m9[0m   run(client: Client, message: Interaction) {
+[7m [0m [91m  ~~~[0m
+
+  [96mserver/classes/loaders/Command.ts[0m:[93m10[0m:[93m3[0m
+    [7m10[0m   run: (client: Client, message: Interaction) => Promise<string | EmbedBuilder | InteractionReplyOptions>
+    [7m  [0m [96m  ~~~[0m
+    The expected type comes from property 'run' which is declared here on type 'CommandOptions'
+
+[03/01/2023, 18:43:56] [ERR - TypeError: Cannot read properties of undefined (reading 'default')
+    at Function.load (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/classes/loaders/CommandLoader.ts:38:44)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Client.<anonymous> (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/index.ts:33:3)]: Cannot read properties of undefined (reading 'default')
+[03/01/2023, 18:43:54] [INFO - SERVER]: Server listening on port 4000

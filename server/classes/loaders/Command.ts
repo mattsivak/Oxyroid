@@ -1,5 +1,6 @@
 import { SlashCommandBuilder } from '@discordjs/builders';
-import { Client, Interaction, InteractionReplyOptions, EmbedBuilder } from 'discord.js';
+import { Client, Interaction, InteractionReplyOptions, EmbedBuilder, CommandInteraction, ApplicationCommandChoicesOption, ApplicationCommandOptionChoiceData } from 'discord.js';
+import { WhatsAppAPI } from 'whatsapp-api-js';
 import Logger from '../Logger';
 
 export type CommandOptions = {
@@ -7,7 +8,7 @@ export type CommandOptions = {
   description: string,
   group: string,
 
-  run: (client: Client, message: Interaction) => Promise<string | EmbedBuilder | InteractionReplyOptions>
+  run: (client: Client, message: CommandInteraction) => Promise<string | EmbedBuilder | InteractionReplyOptions | false>
 
   afterGen?: (builder: SlashCommandBuilder) => void
 
@@ -20,7 +21,7 @@ export type CommandOptions = {
 }
 
 export default class Command {
-  public run: (client: Client, message: Interaction) => Promise<string | EmbedBuilder | InteractionReplyOptions>;
+  public run: (client: Client, message: CommandInteraction) => Promise<string | EmbedBuilder | InteractionReplyOptions | false>;
   public builder: SlashCommandBuilder;
   public options: CommandOptions;
 

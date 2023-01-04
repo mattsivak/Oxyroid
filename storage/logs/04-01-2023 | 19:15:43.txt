@@ -1,0 +1,33 @@
+Starting procces. Date and time is 04/01/2023, 19:15:43
+
+
+[04/01/2023, 19:15:43] [INFO - CLIENT]: Logged in as Oxyroid#6023
+[04/01/2023, 19:15:43] [INFO - SERVER]: Server listening on port 4000
+[04/01/2023, 19:15:44] [INFO - BUTTONS]: Loaded button: deleteMe.ts
+[04/01/2023, 19:15:44] [INFO - BUTTONS]: Loaded button: helpCategory.ts
+[04/01/2023, 19:15:44] [INFO - COMMANDS]: Loaded command: clear.ts
+[04/01/2023, 19:15:44] [INFO - COMMANDS]: Loaded command: dump.ts
+[04/01/2023, 19:15:44] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts
+[04/01/2023, 19:15:44] [INFO - COMMANDS]: Loaded command: bassboost.ts
+[04/01/2023, 19:15:44] [INFO - COMMANDS]: Loaded command: pause.ts
+[04/01/2023, 19:15:44] [INFO - COMMANDS]: Loaded command: play.ts
+[04/01/2023, 19:15:44] [INFO - COMMANDS]: Loaded command: resume.ts
+[04/01/2023, 19:15:44] [INFO - COMMANDS]: Loaded command: skip.ts
+[04/01/2023, 19:15:44] [INFO - COMMANDS]: Loaded command: stop.ts
+[04/01/2023, 19:15:45] [INFO - COMMANDS]: Loaded command: volume.ts
+[04/01/2023, 19:15:44] [INFO - COMMANDS]: Loaded command: help.ts
+[04/01/2023, 19:15:44] [INFO - COMMANDS]: Loaded command: invite.ts
+[04/01/2023, 19:15:44] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts
+[04/01/2023, 19:15:45] [INFO - COMMANDS]: Successfully updated slash commands.
+[04/01/2023, 19:15:45] [INFO - COMMANDS]: Loaded command: ping.ts
+[04/01/2023, 19:15:45] [INFO - COMMANDS]: Successfully updated slash commands.
+[04/01/2023, 19:15:46] [INFO - DB]: Connected to database
+[04/01/2023, 19:15:55] [DEB - COMMANDS]: Command used: play
+[04/01/2023, 19:16:44] [DEB - COMMANDS]: Command used: pause
+[04/01/2023, 19:17:35] [DEB - COMMANDS]: Command used: resume
+[04/01/2023, 19:17:44] [DEB - COMMANDS]: Command used: pause
+[04/01/2023, 19:18:20] [DEB - COMMANDS]: Command used: resume
+[04/01/2023, 19:18:35] [DEB - COMMANDS]: Command used: bassboost
+[04/01/2023, 19:18:45] [DEB - COMMANDS]: Command used: bassboost
+[04/01/2023, 19:18:58] [DEB - COMMANDS]: Command used: pause
+[04/01/2023, 19:19:22] [INFO - PROCESS]: Exiting with reason: "SIGUSR2"

@@ -38,3 +38,4 @@ export default class FeaturesLoader {
     this.alreadyLoaded = true;
   }
 }
+ 

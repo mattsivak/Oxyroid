@@ -1,0 +1,27 @@
+Starting procces. Date and time is 04/01/2023, 18:54:47
+
+
+[04/01/2023, 18:54:48] [INFO - CLIENT]: Logged in as Oxyroid#6023
+[04/01/2023, 18:54:48] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts
+[04/01/2023, 18:54:48] [INFO - BUTTONS]: Loaded button: deleteMe.ts
+[04/01/2023, 18:54:48] [INFO - BUTTONS]: Loaded button: helpCategory.ts
+[04/01/2023, 18:54:48] [INFO - COMMANDS]: Loaded command: clear.ts
+[04/01/2023, 18:54:48] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts
+[04/01/2023, 18:54:48] [INFO - COMMANDS]: Loaded command: help.ts
+[04/01/2023, 18:54:49] [INFO - COMMANDS]: Loaded command: bassboost.ts
+[04/01/2023, 18:54:49] [INFO - COMMANDS]: Loaded command: pause.ts
+[04/01/2023, 18:54:49] [INFO - COMMANDS]: Loaded command: play.ts
+[04/01/2023, 18:54:49] [INFO - COMMANDS]: Loaded command: resume.ts
+[04/01/2023, 18:54:49] [INFO - COMMANDS]: Loaded command: skip.ts
+[04/01/2023, 18:54:49] [INFO - COMMANDS]: Loaded command: stop.ts
+[04/01/2023, 18:54:49] [INFO - COMMANDS]: Loaded command: volume.ts
+[04/01/2023, 18:54:48] [INFO - SERVER]: Server listening on port 4000
+[04/01/2023, 18:54:48] [INFO - COMMANDS]: Loaded command: dump.ts
+[04/01/2023, 18:54:48] [INFO - COMMANDS]: Loaded command: invite.ts
+[04/01/2023, 18:54:53] [INFO - COMMANDS]: Successfully updated slash commands.
+[04/01/2023, 18:54:54] [INFO - COMMANDS]: Loaded command: ping.ts
+[04/01/2023, 18:54:54] [INFO - COMMANDS]: Successfully updated slash commands.
+[04/01/2023, 18:55:54] [INFO - COMMANDS]: Successfully updated slash commands.
+[04/01/2023, 18:55:55] [INFO - DB]: Connected to database
+[04/01/2023, 18:56:34] [DEB - COMMANDS]: Command used: bassboost
+[04/01/2023, 18:56:40] [INFO - PROCESS]: Exiting with reason: "SIGUSR2"

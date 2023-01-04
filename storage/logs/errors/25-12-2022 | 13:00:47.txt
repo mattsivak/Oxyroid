@@ -1,0 +1,40 @@
+Starting procces. Date and time is 25/12/2022, 13:00:47
+
+
+[25/12/2022, 13:00:48] [INFO - CLIENT]: Logged in as Oxyroid#6023
+[25/12/2022, 13:00:48] [INFO - SERVER]: Server listening on port 4000
+[25/12/2022, 13:00:50] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts
+[25/12/2022, 13:00:50] [INFO - COMMANDS]: Loaded command: clear.ts
+[25/12/2022, 13:00:50] [INFO - BUTTONS]: Loaded button: deleteMe.ts
+[25/12/2022, 13:00:50] [INFO - COMMANDS]: Loaded command: dump.ts
+[25/12/2022, 13:00:50] [INFO - COMMANDS]: Loaded command: help.ts
+[25/12/2022, 13:00:50] [INFO - COMMANDS]: Loaded command: invite.ts
+[25/12/2022, 13:00:51] [INFO - COMMANDS]: Loaded command: ping.ts
+[25/12/2022, 13:00:50] [INFO - BUTTONS]: Loaded button: helpCategory.ts
+[25/12/2022, 13:00:50] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts
+[25/12/2022, 13:00:51] [INFO - COMMANDS]: Successfully updated slash commands.
+[25/12/2022, 13:00:51] [INFO - DB]: Connected to database
+[25/12/2022, 13:00:53] [DEB - COMMANDS]: Command used: help
+[25/12/2022, 13:00:53] [ERR - Error: Received one or more errors
+    at UnionValidator.handle (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/node_modules/@sapphire/shapeshift/src/validators/UnionValidator.ts:107:30)
+    at UnionValidator.parse (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/node_modules/@sapphire/shapeshift/src/validators/BaseValidator.ts:102:48)
+    at EmbedBuilder.setDescription (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/node_modules/@discordjs/builders/src/messages/embed/Embed.ts:63:26)
+    at Command.run (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/commands/help.ts:38:13)
+    at Client.<anonymous> (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/classes/loaders/CommandLoader.ts:108:17)
+    at Client.emit (node:events:525:35)
+    at Client.emit (node:domain:489:12)
+    at InteractionCreateAction.handle (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/node_modules/discord.js/src/client/actions/InteractionCreate.js:81:12)
+    at Object.module.exports [as INTERACTION_CREATE] (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/node_modules/discord.js/src/client/websocket/handlers/INTERACTION_CREATE.js:4:36)
+    at WebSocketManager.handlePacket (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/node_modules/discord.js/src/client/websocket/WebSocketManager.js:352:31)]: Received one or more errors
+[25/12/2022, 13:01:10] [DEB - COMMANDS]: Command used: help
+[25/12/2022, 13:01:10] [ERR - Error: Received one or more errors
+    at UnionValidator.handle (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/node_modules/@sapphire/shapeshift/src/validators/UnionValidator.ts:107:30)
+    at UnionValidator.parse (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/node_modules/@sapphire/shapeshift/src/validators/BaseValidator.ts:102:48)
+    at EmbedBuilder.setDescription (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/node_modules/@discordjs/builders/src/messages/embed/Embed.ts:63:26)
+    at Command.run (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/commands/help.ts:38:13)
+    at Client.<anonymous> (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/classes/loaders/CommandLoader.ts:108:17)
+    at Client.emit (node:events:525:35)
+    at Client.emit (node:domain:489:12)
+    at InteractionCreateAction.handle (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/node_modules/discord.js/src/client/actions/InteractionCreate.js:81:12)
+    at Object.module.exports [as INTERACTION_CREATE] (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/node_modules/discord.js/src/client/websocket/handlers/INTERACTION_CREATE.js:4:36)
+    at WebSocketManager.handlePacket (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/node_modules/discord.js/src/client/websocket/WebSocketManager.js:352:31)]: Received one or more errors

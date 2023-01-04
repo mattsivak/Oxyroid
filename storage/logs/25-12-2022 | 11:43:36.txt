@@ -1,0 +1,21 @@
+Starting procces. Date and time is 25/12/2022, 11:43:36
+
+
+[25/12/2022, 11:43:38] [INFO - CLIENT]: Logged in as Oxyroid#6023
+[25/12/2022, 11:43:40] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts
+[25/12/2022, 11:43:40] [INFO - BUTTONS]: Loaded button: test.ts
+[25/12/2022, 11:43:40] [ERR - COMMANDS]: Failed loading of command: ${file} due to TSError: ⨯ Unable to compile TypeScript:
+[96mserver/commands/clear.ts[0m:[93m48[0m:[93m45[0m - [91merror[0m[90m TS2339: [0mProperty 'size' does not exist on type 'void | Collection<string, Message<boolean>>'.
+  Property 'size' does not exist on type 'void'.
+
+[7m48[0m         .setDescription(`Deleted ${messages.size} messages`)
+[7m  [0m [91m                                            ~~~~[0m
+
+[25/12/2022, 11:43:40] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts
+[25/12/2022, 11:43:38] [INFO - SERVER]: Server listening on port 4000
+[25/12/2022, 11:43:40] [ERR - TypeError: Cannot read properties of undefined (reading 'default')
+    at Function.load (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/classes/loaders/CommandLoader.ts:38:44)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Client.<anonymous> (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/index.ts:33:3)]: Cannot read properties of undefined (reading 'default')
+[25/12/2022, 11:43:40] [INFO - PROCESS]: Exiting with reason: "SIGUSR2"
+[25/12/2022, 11:43:41] [INFO - DB]: Connected to database

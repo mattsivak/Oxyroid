@@ -1,6 +1,5 @@
-import { Client, Interaction, EmbedBuilder } from "discord.js";
+import { Client, Interaction, EmbedBuilder, CommandInteraction } from "discord.js";
 import Command from "../classes/loaders/Command";
-import ping from "ping";
 import Settings from "../classes/Settings"
 export default new Command(
   {
@@ -9,7 +8,7 @@ export default new Command(
     group: "random",
     
     // functions
-    run: async (client: Client, message: Interaction) => {
+    run: async (client: Client, message) => {
       if (!message) return "Some error occured"
       if (!message.guild) return "Some error occured";
   

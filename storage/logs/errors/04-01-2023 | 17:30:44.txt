@@ -1,0 +1,20 @@
+Starting procces. Date and time is 04/01/2023, 17:30:44
+
+
+[04/01/2023, 17:30:45] [INFO - CLIENT]: Logged in as Oxyroid#6023
+[04/01/2023, 17:30:45] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts
+[04/01/2023, 17:30:45] [INFO - BUTTONS]: Loaded button: deleteMe.ts
+[04/01/2023, 17:30:45] [INFO - BUTTONS]: Loaded button: helpCategory.ts
+[04/01/2023, 17:30:46] [INFO - COMMANDS]: Loaded command: dump.ts
+[04/01/2023, 17:30:46] [INFO - COMMANDS]: Loaded command: help.ts
+[04/01/2023, 17:30:46] [INFO - COMMANDS]: Loaded command: invite.ts
+[04/01/2023, 17:30:46] [INFO - COMMANDS]: Loaded command: ping.ts
+[04/01/2023, 17:30:45] [INFO - COMMANDS]: Loaded command: clear.ts
+[04/01/2023, 17:30:45] [INFO - SERVER]: Server listening on port 4000
+[04/01/2023, 17:30:45] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts
+[04/01/2023, 17:30:46] [ERR - Error: ENOENT: no such file or directory, scandir '/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/classes/loaders/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/commands/music/'
+    at Object.readdirSync (node:fs:1445:3)
+    at Function.load (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/classes/loaders/CommandLoader.ts:30:22)
+    at Function.load (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/classes/loaders/CommandLoader.ts:43:16)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Client.<anonymous> (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/index.ts:36:3)]: ENOENT: no such file or directory, scandir '/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/classes/loaders/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/commands/music/'

@@ -1,0 +1,15 @@
+Starting procces. Date and time is 23/12/2022, 19:45:57
+
+
+[23/12/2022, 19:45:58] [INFO - CLIENT]: Logged in as Oxyroid#6023
+[23/12/2022, 19:45:59] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts
+[23/12/2022, 19:45:59] [INFO - BUTTONS]: Loaded button: test.ts
+[23/12/2022, 19:45:59] [INFO - COMMANDS]: Loaded command: clear.ts
+[23/12/2022, 19:45:58] [INFO - SERVER]: Server listening on port 4000
+[23/12/2022, 19:45:59] [INFO - COMMANDS]: Loaded command: help.ts
+[23/12/2022, 19:45:59] [INFO - COMMANDS]: Loaded command: invite.ts
+[23/12/2022, 19:46:00] [INFO - COMMANDS]: Loaded command: log.ts
+[23/12/2022, 19:46:00] [INFO - COMMANDS]: Loaded command: ping.ts
+[23/12/2022, 19:46:00] [ERR - COMMANDS]: Error while registering commands on API: TypeError: dataToSend.toJSON is not a function
+[23/12/2022, 19:45:59] [INFO - COMMANDS]: Loaded command: dump.ts
+[23/12/2022, 19:45:59] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts

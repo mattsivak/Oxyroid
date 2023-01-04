@@ -1,4 +1,4 @@
-import Discord, { GatewayIntentBits, Partials } from "discord.js";
+import Discord, { GatewayIntentBits, Partials, VoiceChannel } from "discord.js";
 import Settings from "./classes/Settings";
 import Logger from "./classes/Logger";
 import Database from "./classes/Database";
@@ -8,10 +8,11 @@ import ButtonsLoader from "./classes/loaders/ButtonLoader";
 import Data from "./classes/Data";
 import startServer from "./express";
 import ButtonLoader from "./classes/loaders/ButtonLoader";
+import Audio from "./classes/Audio";
 
 const client = new Discord.Client({
-  partials: [Partials.Message, Partials.Channel, Partials.Channel],
-  intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.GuildMessageReactions],
+  partials: [Partials.Message, Partials.Channel],
+  intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.GuildMessageReactions, GatewayIntentBits.GuildVoiceStates, GatewayIntentBits.GuildMembers],
 });
 
 Data.client = client;
@@ -25,13 +26,15 @@ client.on("ready", async () => {
 
   startServer();
 
-  FeaturesLoader.load();
+  Audio.init()
 
-  ButtonsLoader.load();
-  ButtonLoader.registerEventListener()
+  await FeaturesLoader.load();
+
+  await ButtonsLoader.load();
+  await ButtonLoader.registerEventListener()
 
   await CommandLoader.load();
-  await CommandLoader.registerCommandsOnApi();
+  // await CommandLoader.registerCommandsOnApi();
   await CommandLoader.registerEventHandler();
 
   new Database();

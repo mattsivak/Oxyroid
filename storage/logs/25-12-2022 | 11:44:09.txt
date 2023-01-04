@@ -1,0 +1,18 @@
+Starting procces. Date and time is 25/12/2022, 11:44:09
+
+
+[25/12/2022, 11:44:09] [INFO - CLIENT]: Logged in as Oxyroid#6023
+[25/12/2022, 11:44:09] [INFO - SERVER]: Server listening on port 4000
+[25/12/2022, 11:44:10] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts
+[25/12/2022, 11:44:10] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts
+[25/12/2022, 11:44:10] [INFO - BUTTONS]: Loaded button: test.ts
+[25/12/2022, 11:44:10] [INFO - COMMANDS]: Loaded command: clear.ts
+[25/12/2022, 11:44:11] [INFO - COMMANDS]: Loaded command: dump.ts
+[25/12/2022, 11:44:11] [INFO - COMMANDS]: Loaded command: help.ts
+[25/12/2022, 11:44:11] [INFO - COMMANDS]: Loaded command: invite.ts
+[25/12/2022, 11:44:11] [INFO - COMMANDS]: Loaded command: ping.ts
+[25/12/2022, 11:44:11] [INFO - DB]: Connected to database
+[25/12/2022, 11:44:11] [INFO - COMMANDS]: Successfully updated slash commands.
+[25/12/2022, 11:44:12] [DEB - COMMANDS]: Command used: clear
+[25/12/2022, 11:44:13] [ERR - CLEARCOMMAND]: DiscordAPIError[50034]: You can only bulk delete messages that are under 14 days old.
+[25/12/2022, 11:44:33] [INFO - PROCESS]: Exiting with reason: "SIGUSR2"

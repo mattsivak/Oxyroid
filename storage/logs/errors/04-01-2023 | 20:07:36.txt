@@ -1,0 +1,28 @@
+Starting procces. Date and time is 04/01/2023, 20:07:36
+
+
+[04/01/2023, 20:07:37] [INFO - CLIENT]: Logged in as Oxyroid#6023
+[04/01/2023, 20:07:37] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts
+[04/01/2023, 20:07:37] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts
+[04/01/2023, 20:07:37] [INFO - BUTTONS]: Loaded button: deleteMe.ts
+[04/01/2023, 20:07:37] [INFO - BUTTONS]: Loaded button: helpCategory.ts
+[04/01/2023, 20:07:37] [INFO - COMMANDS]: Loaded command: clear.ts
+[04/01/2023, 20:07:37] [INFO - COMMANDS]: Loaded command: dump.ts
+[04/01/2023, 20:07:37] [INFO - COMMANDS]: Loaded command: help.ts
+[04/01/2023, 20:07:37] [INFO - COMMANDS]: Loaded command: invite.ts
+[04/01/2023, 20:07:37] [ERR - COMMANDS]: Failed loading of command: 8d.ts due to TSError: ⨯ Unable to compile TypeScript:
+[96mserver/commands/music/8d.ts[0m:[93m19[0m:[93m40[0m - [91merror[0m[90m TS7015: [0mElement implicitly has an 'any' type because index expression is not of type 'number'.
+
+[7m19[0m       "8D": !queue.getFiltersEnabled()["8D"]
+[7m  [0m [91m                                       ~~~~[0m
+[96mserver/commands/music/8d.ts[0m:[93m22[0m:[93m102[0m - [91merror[0m[90m TS7015: [0mElement implicitly has an 'any' type because index expression is not of type 'number'.
+
+[7m22[0m     await interaction.followUp({ content: `🎧 | Bass boost switched to **${queue.getFiltersEnabled()["8D"]}**` });
+[7m  [0m [91m                                                                                                     ~~~~[0m
+
+[04/01/2023, 20:07:37] [ERR - TypeError: Cannot read properties of undefined (reading 'default')
+    at Function.load (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/classes/loaders/CommandLoader.ts:37:44)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Function.load (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/classes/loaders/CommandLoader.ts:43:11)
+    at async Client.<anonymous> (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/index.ts:36:3)]: Cannot read properties of undefined (reading 'default')
+[04/01/2023, 20:07:37] [INFO - SERVER]: Server listening on port 4000

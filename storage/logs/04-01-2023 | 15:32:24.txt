@@ -1,0 +1,37 @@
+Starting procces. Date and time is 04/01/2023, 15:32:24
+
+
+[04/01/2023, 15:32:25] [INFO - CLIENT]: Logged in as Oxyroid#6023
+[04/01/2023, 15:32:25] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts
+[04/01/2023, 15:32:25] [INFO - BUTTONS]: Loaded button: deleteMe.ts
+[04/01/2023, 15:32:25] [INFO - COMMANDS]: Loaded command: clear.ts
+[04/01/2023, 15:32:25] [INFO - BUTTONS]: Loaded button: helpCategory.ts
+[04/01/2023, 15:32:25] [INFO - COMMANDS]: Loaded command: dump.ts
+[04/01/2023, 15:32:25] [INFO - COMMANDS]: Loaded command: help.ts
+[04/01/2023, 15:32:25] [INFO - COMMANDS]: Loaded command: invite.ts
+[04/01/2023, 15:32:26] [ERR - COMMANDS]: Failed loading of command: ping.ts due to TSError: ⨯ Unable to compile TypeScript:
+[96mserver/commands/ping.ts[0m:[93m3[0m:[93m18[0m - [91merror[0m[90m TS7016: [0mCould not find a declaration file for module 'ping'. '/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/node_modules/ping/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/ping` if it exists or add a new declaration (.d.ts) file containing `declare module 'ping';`
+
+[7m3[0m import ping from "ping";
+[7m [0m [91m                 ~~~~~~[0m
+[96mserver/commands/ping.ts[0m:[93m12[0m:[93m5[0m - [91merror[0m[90m TS2322: [0mType '(client: Client, message: Interaction) => Promise<"Some error occured" | EmbedBuilder>' is not assignable to type '(client: Client<boolean>, message: CommandInteraction<CacheType>) => Promise<string | EmbedBuilder | InteractionReplyOptions>'.
+  Types of parameters 'message' and 'message' are incompatible.
+    Type 'CommandInteraction<CacheType>' is not assignable to type 'Interaction<CacheType>'.
+      Type 'CommandInteraction<CacheType>' is missing the following properties from type 'UserContextMenuCommandInteraction<CacheType>': targetUser, targetMember, targetId, resolveContextMenuOptions
+
+[7m12[0m     run:  async (client: Client, message: Interaction) => {
+[7m  [0m [91m    ~~~[0m
+
+  [96mserver/classes/loaders/Command.ts[0m:[93m10[0m:[93m3[0m
+    [7m10[0m   run: (client: Client, message: CommandInteraction) => Promise<string | EmbedBuilder | InteractionReplyOptions>
+    [7m  [0m [96m  ~~~[0m
+    The expected type comes from property 'run' which is declared here on type 'CommandOptions'
+
+[04/01/2023, 15:32:25] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts
+[04/01/2023, 15:32:25] [INFO - SERVER]: Server listening on port 4000
+[04/01/2023, 15:32:26] [ERR - TypeError: Cannot read properties of undefined (reading 'default')
+    at Function.load (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/classes/loaders/CommandLoader.ts:38:44)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Client.<anonymous> (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/index.ts:36:3)]: Cannot read properties of undefined (reading 'default')
+[04/01/2023, 15:32:27] [INFO - PROCESS]: Exiting with reason: "SIGUSR2"

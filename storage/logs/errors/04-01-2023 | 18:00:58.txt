@@ -1,0 +1,21 @@
+Starting procces. Date and time is 04/01/2023, 18:00:58
+
+
+[04/01/2023, 18:00:59] [INFO - CLIENT]: Logged in as Oxyroid#6023
+[04/01/2023, 18:00:59] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts
+[04/01/2023, 18:00:59] [INFO - BUTTONS]: Loaded button: deleteMe.ts
+[04/01/2023, 18:00:59] [INFO - COMMANDS]: Loaded command: clear.ts
+[04/01/2023, 18:00:59] [INFO - BUTTONS]: Loaded button: helpCategory.ts
+[04/01/2023, 18:00:59] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts
+[04/01/2023, 18:00:59] [INFO - COMMANDS]: Loaded command: help.ts
+[04/01/2023, 18:01:00] [INFO - COMMANDS]: Loaded command: invite.ts
+[04/01/2023, 18:01:00] [INFO - COMMANDS]: Loaded command: pause.ts
+[04/01/2023, 18:01:00] [INFO - COMMANDS]: Loaded command: play.ts
+[04/01/2023, 18:01:00] [INFO - COMMANDS]: Loaded command: skip.ts
+[04/01/2023, 18:01:00] [INFO - COMMANDS]: Loaded command: stop.ts
+[04/01/2023, 18:01:00] [INFO - COMMANDS]: Loaded command: unpause.ts
+[04/01/2023, 18:01:00] [INFO - COMMANDS]: Loaded command: volume.ts
+[04/01/2023, 18:01:00] [INFO - COMMANDS]: Loaded command: ping.ts
+[04/01/2023, 18:01:00] [ERR - COMMANDS]: Failed to register commands on API: TypeError: Cannot read properties of undefined (reading 'toJSON')
+[04/01/2023, 18:00:59] [INFO - COMMANDS]: Loaded command: dump.ts
+[04/01/2023, 18:00:59] [INFO - SERVER]: Server listening on port 4000

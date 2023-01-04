@@ -100,7 +100,7 @@ export default class Logger {
     if (!this.firstLogTimeToDiscord) {
       this.firstLogTimeToDiscord = new Date().toLocaleString().replace(/\//g, "-").replace(", ", "_").replace(/\:/g, "-");
 
-      client.guilds.fetch(Settings.logsDiscordGuildId).then(guild => {
+      client.guilds.fetch(Settings.developerDiscordGuildId).then(guild => {
         guild.channels.create({
           type: ChannelType.GuildText,
           name: this.firstLogTimeToDiscord as string,

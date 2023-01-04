@@ -1,0 +1,39 @@
+Starting procces. Date and time is 04/01/2023, 17:42:16
+
+
+[04/01/2023, 17:42:17] [INFO - CLIENT]: Logged in as Oxyroid#6023
+[04/01/2023, 17:42:17] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts
+[04/01/2023, 17:42:17] [INFO - BUTTONS]: Loaded button: deleteMe.ts
+[04/01/2023, 17:42:17] [INFO - COMMANDS]: Loaded command: clear.ts
+[04/01/2023, 17:42:17] [INFO - BUTTONS]: Loaded button: helpCategory.ts
+[04/01/2023, 17:42:17] [INFO - COMMANDS]: Loaded command: dump.ts
+[04/01/2023, 17:42:17] [INFO - COMMANDS]: Loaded command: help.ts
+[04/01/2023, 17:42:17] [INFO - SERVER]: Server listening on port 4000
+[04/01/2023, 17:42:18] [ERR - COMMANDS]: Failed loading of command: play.ts due to TSError: ⨯ Unable to compile TypeScript:
+[96mserver/commands/music/play.ts[0m:[93m3[0m:[93m19[0m - [91merror[0m[90m TS2307: [0mCannot find module '../classes/Audio' or its corresponding type declarations.
+
+[7m3[0m import Audio from "../classes/Audio";
+[7m [0m [91m                  ~~~~~~~~~~~~~~~~~~[0m
+[96mserver/commands/music/play.ts[0m:[93m4[0m:[93m18[0m - [91merror[0m[90m TS2307: [0mCannot find module '../classes/Data' or its corresponding type declarations.
+
+[7m4[0m import Data from "../classes/Data";
+[7m [0m [91m                 ~~~~~~~~~~~~~~~~~[0m
+[96mserver/commands/music/play.ts[0m:[93m5[0m:[93m21[0m - [91merror[0m[90m TS2307: [0mCannot find module '../classes/loaders/Command' or its corresponding type declarations.
+
+[7m5[0m import Command from "../classes/loaders/Command";
+[7m [0m [91m                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96mserver/commands/music/play.ts[0m:[93m6[0m:[93m20[0m - [91merror[0m[90m TS2307: [0mCannot find module '../classes/Logger' or its corresponding type declarations.
+
+[7m6[0m import Logger from "../classes/Logger";
+[7m [0m [91m                   ~~~~~~~~~~~~~~~~~~~[0m
+[96mserver/commands/music/play.ts[0m:[93m22[0m:[93m29[0m - [91merror[0m[90m TS7006: [0mParameter 'interaction' implicitly has an 'any' type.
+
+[7m22[0m   async run(client: Client, interaction) {
+[7m  [0m [91m                            ~~~~~~~~~~~[0m
+
+[04/01/2023, 17:42:18] [INFO - COMMANDS]: Loaded command: ping.ts
+[04/01/2023, 17:42:18] [INFO - COMMANDS]: Loaded command: invite.ts
+[04/01/2023, 17:42:17] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts
+[04/01/2023, 17:42:18] [ERR - TypeError: Cannot read properties of undefined (reading 'default')
+    at Function.load (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/classes/loaders/CommandLoader.ts:37:44)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)]: Cannot read properties of undefined (reading 'default')

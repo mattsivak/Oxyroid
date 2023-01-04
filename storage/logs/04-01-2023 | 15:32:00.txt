@@ -1,0 +1,29 @@
+Starting procces. Date and time is 04/01/2023, 15:32:00
+
+
+[04/01/2023, 15:32:01] [INFO - CLIENT]: Logged in as Oxyroid#6023
+[04/01/2023, 15:32:01] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts
+[04/01/2023, 15:32:01] [INFO - BUTTONS]: Loaded button: deleteMe.ts
+[04/01/2023, 15:32:01] [INFO - COMMANDS]: Loaded command: dump.ts
+[04/01/2023, 15:32:01] [INFO - BUTTONS]: Loaded button: helpCategory.ts
+[04/01/2023, 15:32:01] [ERR - COMMANDS]: Failed loading of command: help.ts due to TSError: ⨯ Unable to compile TypeScript:
+[96mserver/commands/help.ts[0m:[93m14[0m:[93m5[0m - [91merror[0m[90m TS2322: [0mType '(client: Client, message: Interaction) => Promise<"Some error occured" | InteractionReplyOptions>' is not assignable to type '(client: Client<boolean>, message: CommandInteraction<CacheType>) => Promise<string | InteractionReplyOptions | EmbedBuilder>'.
+  Types of parameters 'message' and 'message' are incompatible.
+    Type 'CommandInteraction<CacheType>' is not assignable to type 'Interaction<CacheType>'.
+      Type 'CommandInteraction<CacheType>' is missing the following properties from type 'UserContextMenuCommandInteraction<CacheType>': targetUser, targetMember, targetId, resolveContextMenuOptions
+
+[7m14[0m     run: async (client: Client, message: Interaction) => {
+[7m  [0m [91m    ~~~[0m
+
+  [96mserver/classes/loaders/Command.ts[0m:[93m10[0m:[93m3[0m
+    [7m10[0m   run: (client: Client, message: CommandInteraction) => Promise<string | EmbedBuilder | InteractionReplyOptions>
+    [7m  [0m [96m  ~~~[0m
+    The expected type comes from property 'run' which is declared here on type 'CommandOptions'
+
+[04/01/2023, 15:32:01] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts
+[04/01/2023, 15:32:01] [INFO - SERVER]: Server listening on port 4000
+[04/01/2023, 15:32:01] [ERR - TypeError: Cannot read properties of undefined (reading 'default')
+    at Function.load (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/classes/loaders/CommandLoader.ts:38:44)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Client.<anonymous> (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/index.ts:36:3)]: Cannot read properties of undefined (reading 'default')
+[04/01/2023, 15:32:11] [INFO - PROCESS]: Exiting with reason: "SIGUSR2"

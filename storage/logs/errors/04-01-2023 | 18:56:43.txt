@@ -1,0 +1,24 @@
+Starting procces. Date and time is 04/01/2023, 18:56:43
+
+
+[04/01/2023, 18:56:44] [INFO - CLIENT]: Logged in as Oxyroid#6023
+[04/01/2023, 18:56:44] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts
+[04/01/2023, 18:56:44] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts
+[04/01/2023, 18:56:44] [INFO - BUTTONS]: Loaded button: deleteMe.ts
+[04/01/2023, 18:56:44] [INFO - BUTTONS]: Loaded button: helpCategory.ts
+[04/01/2023, 18:56:44] [INFO - COMMANDS]: Loaded command: clear.ts
+[04/01/2023, 18:56:45] [INFO - COMMANDS]: Loaded command: dump.ts
+[04/01/2023, 18:56:45] [INFO - COMMANDS]: Loaded command: help.ts
+[04/01/2023, 18:56:45] [INFO - COMMANDS]: Loaded command: invite.ts
+[04/01/2023, 18:56:45] [ERR - COMMANDS]: Failed loading of command: bassboost.ts due to TSError: ⨯ Unable to compile TypeScript:
+[96mserver/commands/music/bassboost.ts[0m:[93m12[0m:[93m17[0m - [91merror[0m[90m TS18048: [0m'queue' is possibly 'undefined'.
+
+[7m12[0m     console.log(queue.getFiltersEnabled());
+[7m  [0m [91m                ~~~~~[0m
+
+[04/01/2023, 18:56:45] [ERR - TypeError: Cannot read properties of undefined (reading 'default')
+    at Function.load (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/classes/loaders/CommandLoader.ts:37:44)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Function.load (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/classes/loaders/CommandLoader.ts:43:11)
+    at async Client.<anonymous> (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/index.ts:36:3)]: Cannot read properties of undefined (reading 'default')
+[04/01/2023, 18:56:44] [INFO - SERVER]: Server listening on port 4000

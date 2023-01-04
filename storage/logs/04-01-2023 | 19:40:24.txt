@@ -1,0 +1,23 @@
+Starting procces. Date and time is 04/01/2023, 19:40:24
+
+
+[04/01/2023, 19:40:25] [INFO - CLIENT]: Logged in as Oxyroid#6023
+[04/01/2023, 19:40:25] [INFO - SERVER]: Server listening on port 4000
+[04/01/2023, 19:40:25] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts
+[04/01/2023, 19:40:25] [INFO - BUTTONS]: Loaded button: deleteMe.ts
+[04/01/2023, 19:40:25] [INFO - BUTTONS]: Loaded button: helpCategory.ts
+[04/01/2023, 19:40:25] [ERR - COMMANDS]: Failed loading of command: clear.ts due to TSError: ⨯ Unable to compile TypeScript:
+[96mserver/classes/loaders/Command.ts[0m:[93m39[0m:[93m120[0m - [91merror[0m[90m TS2345: [0mArgument of type 'ApplicationCommandOptionChoiceData<string | number>' is not assignable to parameter of type 'APIApplicationCommandOptionChoice<string>'.
+  Types of property 'value' are incompatible.
+    Type 'string | number' is not assignable to type 'string'.
+      Type 'number' is not assignable to type 'string'.
+
+[7m39[0m               return o.setName(option.name).setDescription(option.description).setRequired(option.required).addChoices(...option.options)
+[7m  [0m [91m                                                                                                                       ~~~~~~~~~~~~~~~~~[0m
+
+[04/01/2023, 19:40:26] [ERR - TypeError: Cannot read properties of undefined (reading 'default')
+    at Function.load (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/classes/loaders/CommandLoader.ts:37:44)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Client.<anonymous> (/Users/mattsivak/code/archive/discord-bots/nodejs/Oxyroid/server/index.ts:36:3)]: Cannot read properties of undefined (reading 'default')
+[04/01/2023, 19:40:25] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts
+[04/01/2023, 19:41:58] [INFO - PROCESS]: Exiting with reason: "SIGUSR2"

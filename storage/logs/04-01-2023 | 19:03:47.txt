@@ -1,0 +1,35 @@
+Starting procces. Date and time is 04/01/2023, 19:03:47
+
+
+[04/01/2023, 19:03:48] [INFO - CLIENT]: Logged in as Oxyroid#6023
+[04/01/2023, 19:03:48] [INFO - BUTTONS]: Loaded button: deleteMe.ts
+[04/01/2023, 19:03:48] [INFO - BUTTONS]: Loaded button: helpCategory.ts
+[04/01/2023, 19:03:48] [INFO - COMMANDS]: Loaded command: clear.ts
+[04/01/2023, 19:03:48] [INFO - COMMANDS]: Loaded command: dump.ts
+[04/01/2023, 19:03:48] [INFO - COMMANDS]: Loaded command: help.ts
+[04/01/2023, 19:03:48] [INFO - COMMANDS]: Loaded command: invite.ts
+[04/01/2023, 19:03:48] [INFO - COMMANDS]: Loaded command: bassboost.ts
+[04/01/2023, 19:03:48] [INFO - COMMANDS]: Loaded command: pause.ts
+[04/01/2023, 19:03:49] [INFO - COMMANDS]: Loaded command: play.ts
+[04/01/2023, 19:03:49] [INFO - COMMANDS]: Loaded command: resume.ts
+[04/01/2023, 19:03:49] [INFO - COMMANDS]: Loaded command: skip.ts
+[04/01/2023, 19:03:49] [INFO - COMMANDS]: Loaded command: stop.ts
+[04/01/2023, 19:03:49] [INFO - COMMANDS]: Loaded command: volume.ts
+[04/01/2023, 19:03:48] [INFO - FEATURES]: Loaded feature: OnGuildAddRegisterCommands.ts
+[04/01/2023, 19:03:48] [INFO - SERVER]: Server listening on port 4000
+[04/01/2023, 19:03:48] [INFO - FEATURES]: Loaded feature: CreatePerGuildModel.ts
+[04/01/2023, 19:03:49] [INFO - COMMANDS]: Successfully updated slash commands.
+[04/01/2023, 19:03:49] [INFO - COMMANDS]: Loaded command: ping.ts
+[04/01/2023, 19:03:50] [INFO - COMMANDS]: Successfully updated slash commands.
+[04/01/2023, 19:03:50] [INFO - DB]: Connected to database
+[04/01/2023, 19:04:14] [DEB - COMMANDS]: Command used: bassboost
+[04/01/2023, 19:04:23] [DEB - COMMANDS]: Command used: play
+[04/01/2023, 19:04:30] [DEB - COMMANDS]: Command used: bassboost
+[04/01/2023, 19:04:54] [DEB - COMMANDS]: Command used: volume
+[04/01/2023, 19:05:14] [DEB - COMMANDS]: Command used: volume
+[04/01/2023, 19:05:18] [DEB - COMMANDS]: Command used: volume
+[04/01/2023, 19:05:23] [DEB - COMMANDS]: Command used: volume
+[04/01/2023, 19:05:28] [DEB - COMMANDS]: Command used: volume
+[04/01/2023, 19:05:35] [DEB - COMMANDS]: Command used: volume
+[04/01/2023, 19:05:52] [DEB - COMMANDS]: Command used: clear
+[04/01/2023, 19:05:58] [INFO - PROCESS]: Exiting with reason: "SIGINT"

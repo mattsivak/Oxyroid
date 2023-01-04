@@ -24,7 +24,7 @@ export default class DB {
         Logger.log("console|file", "Connected to database", "INFO", "DB")
       });
       this.mongoose.connection.on("reconnect", () => {
-        Logger.log("console|file", "Reconnected to database", "INFO", "DB")
+        Logger.log("console|file", "Reconnected    to database", "INFO", "DB")
       })
     }
   }
