@@ -4,6 +4,8 @@ import Audio from "../../classes/Audio";
 import Data from "../../classes/Data";
 import Command from "../../classes/loaders/Command";
 import Logger from "../../classes/Logger";
+import playdl from "play-dl"
+import { internal } from "@discord-player/extractor";
 
 export default new Command({
   name: "play",
@@ -41,17 +43,31 @@ export default new Command({
 
 
 
-    const queue = await Audio.player.createQueue(interaction.guild as Guild, {
-      metadata: interaction.channel
+    const queue = Audio.player.createQueue(interaction.guild as Guild, {
+      metadata: interaction.channel,
+
+
+      // @ts-ignore
+      async onBeforeCreateStream(track, source, _queue) {
+        console.log(source);
+        // only trap youtube source
+        if (track.url.includes("https://open.spotify.com/")) {
+          return (await playdl.stream(track.url, { discordPlayerCompatibility: true })).stream;
+        } else if (source === "youtube") {
+          // track here would be youtube track
+          return (await playdl.stream(track.url, { discordPlayerCompatibility: true })).stream;
+          // we must return readable stream or void (returning void means telling discord-player to look for default extractor)
+        }
+      }
     });
 
     try {
       if (!queue.connection) await queue.connect(interaction.member.voice.channel);
     } catch {
-      void Audio.player.deleteQueue(interaction.guildId as string);
+      Audio.player.deleteQueue(interaction.guildId as string);
       return { content: "Could not join your voice channel!" };
     }
-    
+
     await interaction.followUp({ content: `⏱ | Loading your ${searchResult.playlist ? "playlist" : "track"}...` });
     searchResult.playlist ? queue.addTracks(searchResult.tracks) : queue.addTrack(searchResult.tracks[0]);
     if (!queue.playing) await queue.play();

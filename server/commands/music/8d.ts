@@ -22,7 +22,7 @@ export default new Command({
       bassboost_high: queue.getFiltersEnabled().includes("bassboost_high"),
     })
 
-    await interaction.followUp({ content: `🎧 | 8d music switched to **${queue.getFiltersEnabled().includes("8D") ? "on" : "off"}**` });
+    await interaction.followUp({ content: `🎧 | 8d music turned **${queue.getFiltersEnabled().includes("8D") ? "on" : "off"}**` });
     return false
   },
 })

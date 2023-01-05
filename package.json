@@ -1,6 +1,6 @@
 {
   "name": "bialu_bot_rewrite",
-  "version": "1.0.0",
+  "version": "0.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {},
@@ -13,6 +13,7 @@
     "nodemon": "^2.0.15"
   },
   "dependencies": {
+    "@discord-player/extractor": "^3.0.2",
     "@discordjs/builders": "^1.4.0",
     "@discordjs/opus": "^0.8.0",
     "@discordjs/rest": "^1.5.0",
@@ -30,6 +31,7 @@
     "mongoose": "^6.8.2",
     "path": "^0.12.7",
     "ping": "^0.4.2",
+    "play-dl": "^1.9.6",
     "url": "^0.11.0",
     "whatsapp-api-js": "^0.8.1",
     "ytdl-core": "^4.11.2"

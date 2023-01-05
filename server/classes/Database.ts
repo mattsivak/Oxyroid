@@ -15,6 +15,7 @@ export default class DB {
     } else {
       DB._instance = this;
 
+      mongoose.set("strictQuery", false)
       mongoose.connect(Settings.db);
 
       this.mongoose.connection.on("error", (err) => {

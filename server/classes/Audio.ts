@@ -38,6 +38,9 @@ export default class Audio {
       console.log(`[${queue.guild.name}] Error emitted from the connection: ${error.message}`);
     });
 
+    // this.player.on("debug", (idk, mess) => {
+    //   console.log(mess);
+    // })
     
     this.player.on("trackStart", (queue, track) => {
       (queue.metadata as TextChannel).send(`🎶 | Started playing: **${track.title}** in **${queue.connection.channel.name}**!`);
