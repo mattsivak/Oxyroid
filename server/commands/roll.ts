@@ -18,17 +18,17 @@ export default new Command({
   async run(client, interaction) {
       const roll = interaction.options.get("roll")?.value as string
 
-      const regex = /[0-9]+d[0-9]+/i;
+      const regex = /(?:[1-9][0-9]*)?d[0-9]+/i;
   
       if (regex.test(roll)) {
         const [count, cube] = roll.split("d")
         let throws: Array<number> = []
 
-        for (let i = 0; i < parseInt(count); i++) {
+        for (let i = 0; i < (!parseInt(count) ? 1 : parseInt(count)); i++) {
           throws.push(randomNumber(1, parseInt(cube)))
         }
 
-        return `Your throw is: ${"```[" + roll + "]```"} Roll: ${"```[" + throws + "]```"} Result: ${"```" + throws.reduce((partialSum, a) => partialSum + a, 0) + "```"}`
+        return `You asked for: ${"```[" + roll + "]```"} Roll: ${"```[" + throws + "]```"} Result: ${"```" + throws.reduce((partialSum, a) => partialSum + a, 0) + "```"}`
       } else {
         return "Sorry, some error occurred."
       }
