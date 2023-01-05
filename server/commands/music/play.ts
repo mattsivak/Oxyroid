@@ -51,9 +51,7 @@ export default new Command({
       async onBeforeCreateStream(track, source, _queue) {
         console.log(source);
         // only trap youtube source
-        if (track.url.includes("https://open.spotify.com/")) {
-          return (await playdl.stream(track.url, { discordPlayerCompatibility: true })).stream;
-        } else if (source === "youtube") {
+        if (source === "youtube") {
           // track here would be youtube track
           return (await playdl.stream(track.url, { discordPlayerCompatibility: true })).stream;
           // we must return readable stream or void (returning void means telling discord-player to look for default extractor)
