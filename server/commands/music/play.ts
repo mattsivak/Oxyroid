@@ -6,6 +6,7 @@ import Command from "../../classes/loaders/Command";
 import Logger from "../../classes/Logger";
 import playdl from "play-dl"
 import { internal } from "@discord-player/extractor";
+import Settings from "../../classes/Settings";
 
 export default new Command({
   name: "play",
@@ -49,7 +50,9 @@ export default new Command({
 
       // @ts-ignore
       async onBeforeCreateStream(track, source, _queue) {
-        console.log(source);
+        if (Settings.devMode) {
+          Logger.log("console|file", `Source used: ${source}`, "DEB", "PLAYCOMMAND")
+        }
         // only trap youtube source
         if (source === "youtube") {
           // track here would be youtube track

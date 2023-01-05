@@ -106,7 +106,7 @@ export default class CommandLoader {
 
       if (!command) return Logger.log("console|file|whatsapp", `Command not found: ${interaction.commandName}`, "ERR", "COMMANDS");
       try {
-        if (Settings.debugMode) {
+        if (Settings.devMode) {
           Logger.log("console|file", `Command used: ${command.builder.name}`, "DEB", "COMMANDS")
         }
         command.run(this.client, interaction).then((output) => {

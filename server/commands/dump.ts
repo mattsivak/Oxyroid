@@ -12,21 +12,22 @@ export default new Command(
     group: "developer",
 
     // functions
-    run:  async (client: Client, message) => {
+    run: async (client: Client, message) => {
       if (!message) return "Some error occured"
       if (!message.guild) return "Some error occured";
-  
+      const guildId = message.guild.id;
+      const guild = await GuildModel.findOne({ id: guildId });
+
       const embed = new EmbedBuilder()
         .setTitle("Dump")
         .setDescription(
-          JSON.stringify(ButtonLoader.buttons)
+          JSON.stringify(guild, null, 2)
         )
         .setColor(Settings.successColor);
-  
+
       const row = new ActionRowBuilder().addComponents(
-        test.builder
-      )
-  
+        new ButtonBuilder().setCustomId("delete_message").setLabel("Click me!").setStyle(ButtonStyle.Primary))
+
       // throw new Error("idk")
   
       return {

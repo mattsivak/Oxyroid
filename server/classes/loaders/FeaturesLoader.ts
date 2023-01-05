@@ -26,16 +26,14 @@ export default class FeaturesLoader {
 
     for (const file of files) {
       if (file.endsWith('.ts')) {
-        import(path.join(dir, file)).then((module) => {
-          FeaturesLoader.Features.push(module.default);
-          module.default.run(FeaturesLoader.client);
+        const module = await import(path.join(dir, file))
+        FeaturesLoader.Features.push(module.default);
+        await module.default.run(FeaturesLoader.client);
 
-          Logger.log("console|file", `Loaded feature: ${file}`, "INFO", "FEATURES");
-        });
+        Logger.log("console|file", `Loaded feature: ${file}`, "INFO", "FEATURES"); 
       }
     }
 
     this.alreadyLoaded = true;
   }
 }
- 

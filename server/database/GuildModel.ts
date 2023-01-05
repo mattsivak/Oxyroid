@@ -9,7 +9,7 @@ const reqString = {
 
 const GuildSchema = new mongoose.Schema({
   guildID: reqString,
-  prefix: reqString, // Jen aby tu něco bylo, potom tu budou věci jako: lang a všechno ostatní
+  welcomeChannelID: String
 });
 
 

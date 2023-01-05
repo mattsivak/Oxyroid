@@ -50,6 +50,9 @@ const dateString = date.toLocaleString();
 Logger.log("file|withoutFormating", `Starting procces. Date and time is ${dateString}\n\n`, "INFO", "PROCESS");
 Logger.log("console", `Starting procces. Date and time is ${dateString}`, "INFO", "PROCESS");
 
+Logger.log("console|file", `Developer mode is set to: ${Settings.devMode}`, "INFO", "PROCESS");
+
+
 function exitHandler(reason: any) {
   if (alreadyEded) return;
   alreadyEded = true;
