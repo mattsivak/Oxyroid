@@ -34,7 +34,7 @@ client.on("ready", async () => {
   await ButtonLoader.registerEventListener()
 
   await CommandLoader.load();
-  // await CommandLoader.registerCommandsOnApi();
+  await CommandLoader.registerCommandsOnApi();
   await CommandLoader.registerEventHandler();
 
   new Database();

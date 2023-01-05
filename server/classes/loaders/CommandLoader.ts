@@ -45,8 +45,6 @@ export default class CommandLoader {
       }
     }
 
-    await this.registerCommandsOnApi()
-
     this.alreadyLoaded = true;
   }
 
