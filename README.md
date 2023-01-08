@@ -8,7 +8,14 @@ git clone https://github.com/matthsivak/Oxyroid/
 npm install
 ```
 
-### Run backend part
+### Create you .env
+
+```env
+TOKEN=yourToken
+DEV=off
+```
+
+### Run DJS part of bot. (There will be dashboard soon. But now we are focusing on DJS part)
 
 ```bash
 npx ts-node server/index.ts
@@ -21,47 +28,7 @@ npx ts-node server/index.ts
  * CommandLoader for fast commmand creation.
  * FeturesLoader for fast creation of event lisneners.
  * Great logger for debbuging.
- * MongoDB support builted in.
+ * MongoDB support builted in.
 
-### Adding command
-
-Create file in server/commands that ends with .ts
-
-```ts
-import Command from "../classes/loaders/Command"
-
-export default new Command({
-  name: "yourCommand",
-  description: "this is you command",
-  group: "your-commands",
-
-  run(client, interaction) {
-    return "this is your command"
-  }
-
-  options: [
-    {
-      type: "string",
-      name: "yourOption",
-      description: "Your option description",
-      required: true,
-    }
-  ]
-})
-```
-
-### Adding feature
-
-Create file in server/features that ends with .ts
-
-```ts
-import Feature from "../classes/loaders/Features"
-
-export default new Feature("YourFeture", (client) => {
-  client.on("ready", () => {
-    client.user.setActivity("Your Activity", { type: "WATCHING" })
-  })
-})
-```
 
 
