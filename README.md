@@ -1,5 +1,6 @@
 # Oxyroid 
 ## Powerfull multipurpose discord bot
+### Disclaimer. This framework is for developers to make there work very esier. It is not for peaple that don't anything about discordjs. 
 
 ### Installation
 
@@ -20,8 +21,6 @@ DEV=off
 ```bash
 npx ts-node server/index.ts
 ```
-
-### Disclaimer. This framework is for developers to make there work very esier. It is not for peaple that don't anything about discordjs. 
 
 ### What we have for you?
 
