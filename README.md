@@ -1,33 +1,34 @@
-# Oxyroid 
-## Powerfull multipurpose discord bot
-### Disclaimer. This framework is for developers to make there work very esier. It is not for peaple that don't anything about discordjs. 
+# Oxyroid
 
-### Installation
+## A powerful multipurpose discord bot
+
+**DISCLAIMER**: This framework is for developers to make their work a lot easier. It is _not_ for people that don't do anything with [discord.js](https://discord.js.org/).
+
+### Basic setup
 
 ```bash
 git clone https://github.com/matthsivak/Oxyroid/
 npm install
 ```
 
-### Create you .env
+### Create your `.env` file
 
 ```env
 TOKEN=yourToken
 DEV=off
 ```
 
-### Run DJS part of bot. (There will be dashboard soon. But now we are focusing on DJS part)
+### Run the discord.js part of the bot
+
+**NOTE**: There will be a dashboard soon. But now we are focusing on the d.js part.
 
 ```bash
 npx ts-node server/index.ts
 ```
 
-### What we have for you?
+### Current features
 
- * CommandLoader for fast commmand creation.
- * FeturesLoader for fast creation of event lisneners.
- * Great logger for debbuging.
- * MongoDB support builted in.
-
-
-
+- **CommandLoader** for fast commmand creation
+- **FeaturesLoader** for fast creation of event listeners
+- A great logger for debbuging
+- MongoDB support built in
