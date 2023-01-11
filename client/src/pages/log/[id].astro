@@ -1,9 +1,0 @@
----
-import layout from "../../layouts/default.astro"
-const {id} = Astro.params
-const log = await fetch("http://localhost:4000/api/logs/" + id).then(r => r.json())
----
-
-<layout>
-	{log.map((log) => <span>{log}</span><br/>)}
-</layout>
