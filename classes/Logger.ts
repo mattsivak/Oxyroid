@@ -56,16 +56,16 @@ export default class Logger {
     }
 
     // Check if logs folder exists and create it if not
-    if (!fs.existsSync(path.join(__dirname, "..", "..", "storage", "logs"))) {
-      fs.mkdirSync(path.join(__dirname, "..", "..", "storage", "logs"));
+    if (!fs.existsSync(path.join(__dirname, "..", "storage", "logs"))) {
+      fs.mkdirSync(path.join(__dirname, "..", "storage", "logs"));
     }
 
-    fs.appendFile(path.join(__dirname, "..", "..", "storage", "logs", this.firstLogTime + ".txt"), msg + "\n", (err) => {
+    fs.appendFile(path.join(__dirname, "..", "storage", "logs", this.firstLogTime + ".txt"), msg + "\n", (err) => {
       if (err) {
         this.log("console|whatsapp", JSON.stringify(err), "ERR", "Logger");
       } else {
         if (type === "ERR") {
-          fs.copyFile(path.join(__dirname, "..", "..", "storage", "logs", this.firstLogTime + ".txt"), path.join(__dirname, "..", "..", "storage", "logs", "errors", this.firstLogTime + ".txt"), (err) => {
+          fs.copyFile(path.join(__dirname, "..", "storage", "logs", this.firstLogTime + ".txt"), path.join(__dirname, "..", "storage", "logs", "errors", this.firstLogTime + ".txt"), (err) => {
             if (err) {
               this.log("console|whatsapp", JSON.stringify(err), "ERR", "Logger");
             }
