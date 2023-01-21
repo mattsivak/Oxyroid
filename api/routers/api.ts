@@ -10,17 +10,17 @@ api.get("/hello", (_req, res) => {
 })
 
 api.get("/logs", (_req, res) => {
-  const files = fs.readdirSync(path.join(__dirname, "../../../storage/logs/"))
+  const files = fs.readdirSync(path.join(__dirname, "../../storage/logs/"))
 
   res.json(files)
 })
 
 api.get("/logs/:query", (req, res) => {
   const query = req.params.query 
-  const exists = fs.existsSync(path.join(__dirname, "../../../storage/logs", query))
+  const exists = fs.existsSync(path.join(__dirname, "../../storage/logs", query))
   
   if (exists) {
-    const data = fs.readFileSync(path.join(__dirname, "../../../storage/logs", query), "utf8");
+    const data = fs.readFileSync(path.join(__dirname, "../../storage/logs", query), "utf8");
     res.json(data.split("\n"))
   } else {
     res.json({

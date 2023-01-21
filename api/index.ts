@@ -11,7 +11,7 @@ const app = express();
 
 app.use(express.json());
 // Serve the React static files after build
-app.use(express.static(path.resolve(__dirname, "..", "..", "client", "build")));
+// app.use(express.static(path.resolve(__dirname, "..", "client", "build")));
 app.use(express.urlencoded({ extended: false }))
 app.use(session({
   resave: false, // don't save session if unmodified
@@ -23,12 +23,12 @@ app.use(session({
 app.use("/api", apiRouter)
 
 // Catch all other requests and serve the React app
-app.use("*", (_req, res) => {
-  res.sendFile(path.resolve(__dirname, "..", "..", "client", "build", "index.html"));
-});
+// app.use("*", (_req, res) => {
+//   res.sendFile(path.resolve(__dirname, "..", "client", "build", "index.html"));
+// });
 
 
-export default function start() {
+export default function startApi() {
   app.listen(PORT, () => {
     Logger.log("console|file", `Server listening on port ${PORT.toString()}`, "INFO", "SERVER");
   });

@@ -6,7 +6,7 @@ import FeaturesLoader from "./classes/loaders/FeaturesLoader";
 import CommandLoader from "./classes/loaders/CommandLoader";
 import ButtonsLoader from "./classes/loaders/ButtonLoader";
 import Data from "./classes/Data";
-import startServer from "./express";
+import startApi from "./api";
 import ButtonLoader from "./classes/loaders/ButtonLoader";
 import Audio from "./classes/Audio";
 
@@ -24,7 +24,7 @@ client.on("ready", async () => {
   CommandLoader.client = client;
   ButtonLoader.client = client;
 
-  startServer();
+  startApi();
 
   Audio.init()
 
