@@ -10,16 +10,16 @@ export default new Command({
     {
       name: "roll",
       type: "string",
-      description: "Roll that looks like 4d6, 2d20 or 2d8+5",
+      description: "Roll that looks like 4d6, 2k20 or 2d8+5",
       required: true,
     },
   ],
 
   async run(client, interaction) {
     const roll = interaction.options.get("roll")?.value as string;
-    const regex = /(?:[1-9][0-9]*)?d[1-9][0-9]*(?:\+[1-9][0-9]*)/i;
-    const throws_regex = /^([1-9][0-9]*)d/i;
-    const cube_regex = /d([1-9][0-9]*)/i;
+    const regex = /(?:[1-9][0-9]*)?[dk][1-9][0-9]*(?:\+[1-9][0-9]*)/i;
+    const throws_regex = /^([1-9][0-9]*)[dk]/i;
+    const cube_regex = /[dk]([1-9][0-9]*)/i;
     const plus_regex = /\+([1-9][0-9]*)$/i;
 
     if (regex.test(roll)) {
