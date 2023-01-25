@@ -33,8 +33,10 @@ export default new Command({
         throws.push(randomNumber(1, cube));
       }
 
+      const sum = throws.reduce((partialSum, a) => partialSum + a, 0);
+
       return `You asked for: ${"```[" + roll + "]```"} Roll: ${"```[" + throws + "]```"} Result: ${
-        "```" + (throws.reduce((partialSum, a) => partialSum + a, 0) + plus) + "```"
+        "```" + (plus == 0 ? `${sum}` : `${sum}+${plus}=${sum + plus}`) + "```"
       }`;
     } else {
       return "Sorry, the provided string is not valid.";
