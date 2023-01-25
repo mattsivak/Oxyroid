@@ -1,36 +1,43 @@
 import Command from "../classes/loaders/Command";
-import randomNumber from "../utils/randomNumber"
+import randomNumber from "../utils/randomNumber";
 
 export default new Command({
   name: "roll",
-  description: "You can roll what ever you wan't",
+  description: "You can roll whatever you want",
   group: "fun",
 
   options: [
     {
       name: "roll",
       type: "string",
-      description: "Roll that looks like 4d6 or 2d20",
-      required: true
-    }
+      description: "Roll that looks like 4d6, 2d20 or 2d8+5",
+      required: true,
+    },
   ],
 
   async run(client, interaction) {
-      const roll = interaction.options.get("roll")?.value as string
+    const roll = interaction.options.get("roll")?.value as string;
+    const regex = /(?:[1-9][0-9]*)?d[1-9][0-9]*(?:\+[1-9][0-9]*)/i;
+    const throws_regex = /^([1-9][0-9]*)d/i;
+    const cube_regex = /d([1-9][0-9]*)/i;
+    const plus_regex = /\+([1-9][0-9]*)$/i;
 
-      const regex = /(?:[1-9][0-9]*)?d[0-9]+/i;
-  
-      if (regex.test(roll)) {
-        const [count, cube] = roll.split("d")
-        let throws: Array<number> = []
+    if (regex.test(roll)) {
+      const count = parseInt(roll.match(throws_regex)?.[1] || "1");
+      const cube = parseInt(roll.match(cube_regex)?.[1] || "6");
+      const plus = parseInt(roll.match(plus_regex)?.[1] || "0");
 
-        for (let i = 0; i < (!parseInt(count) ? 1 : parseInt(count)); i++) {
-          throws.push(randomNumber(1, parseInt(cube)))
-        }
+      let throws: number[] = [];
 
-        return `You asked for: ${"```[" + roll + "]```"} Roll: ${"```[" + throws + "]```"} Result: ${"```" + throws.reduce((partialSum, a) => partialSum + a, 0) + "```"}`
-      } else {
-        return "Sorry, some error occurred."
+      for (let i = 0; i < count; i++) {
+        throws.push(randomNumber(1, cube));
       }
-    },
-})
+
+      return `You asked for: ${"```[" + roll + "]```"} Roll: ${"```[" + throws + "]```"} Result: ${
+        "```" + (throws.reduce((partialSum, a) => partialSum + a, 0) + plus) + "```"
+      }`;
+    } else {
+      return "Sorry, the provided string is not valid.";
+    }
+  },
+});
