@@ -1,10 +1,22 @@
 import { QueryType } from "discord-player";
-import { ApplicationCommand, CacheType, Client, CommandInteraction, CommandInteractionOption, Guild, GuildMember, Interaction, MessageInteraction, VoiceBasedChannel, VoiceState } from "discord.js";
+import {
+  ApplicationCommand,
+  CacheType,
+  Client,
+  CommandInteraction,
+  CommandInteractionOption,
+  Guild,
+  GuildMember,
+  Interaction,
+  MessageInteraction,
+  VoiceBasedChannel,
+  VoiceState,
+} from "discord.js";
 import Audio from "../../classes/Audio";
 import Data from "../../classes/Data";
 import Command from "../../classes/loaders/Command";
 import Logger from "../../classes/Logger";
-import playdl from "play-dl"
+import playdl from "play-dl";
 import { internal } from "@discord-player/extractor";
 import Settings from "../../classes/Settings";
 
@@ -18,8 +30,8 @@ export default new Command({
       type: "string",
       name: "query",
       description: "query",
-      required: true
-    }
+      required: true,
+    },
   ],
 
   async run(client: Client, interaction) {
@@ -27,7 +39,10 @@ export default new Command({
       return { content: "You are not in a voice channel!", ephemeral: true };
     }
 
-    if (interaction.guild?.members.me?.voice.channelId && interaction.member.voice.channelId !== interaction.guild?.members.me?.voice.channelId) {
+    if (
+      interaction.guild?.members.me?.voice.channelId &&
+      interaction.member.voice.channelId !== interaction.guild?.members.me?.voice.channelId
+    ) {
       return { content: "You are not in my voice channel!", ephemeral: true };
     }
 
@@ -37,21 +52,18 @@ export default new Command({
     const searchResult = await Audio.player
       .search(query, {
         requestedBy: interaction.user,
-        searchEngine: QueryType.AUTO
+        searchEngine: QueryType.AUTO,
       })
-      .catch(() => { });
+      .catch(() => {});
     if (!searchResult || !searchResult.tracks.length) return { content: "No results were found!" };
-
-
 
     const queue = Audio.player.createQueue(interaction.guild as Guild, {
       metadata: interaction.channel,
 
-
       // @ts-ignore
       async onBeforeCreateStream(track, source, _queue) {
         if (Settings.devMode) {
-          Logger.log("console|file", `Source used: ${source}`, "DEB", "PLAYCOMMAND")
+          Logger.log("console|file", `Source used: ${source}`, "DEB", "PLAYCOMMAND");
         }
         // only trap youtube source
         if (source === "youtube") {
@@ -59,7 +71,7 @@ export default new Command({
           return (await playdl.stream(track.url, { discordPlayerCompatibility: true })).stream;
           // we must return readable stream or void (returning void means telling discord-player to look for default extractor)
         }
-      }
+      },
     });
 
     try {
@@ -73,6 +85,6 @@ export default new Command({
     searchResult.playlist ? queue.addTracks(searchResult.tracks) : queue.addTrack(searchResult.tracks[0]);
     if (!queue.playing) await queue.play();
 
-    return false
-  }
-})
+    return false;
+  },
+});

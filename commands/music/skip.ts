@@ -11,15 +11,15 @@ export default new Command({
     await interaction.deferReply();
     const queue = Audio.player.getQueue(interaction.guildId as string);
     if (!queue || !queue.playing) {
-      interaction.followUp({ content: "❌ | No music is being played!" })
-      return false
-    };
+      interaction.followUp({ content: "❌ | No music is being played!" });
+      return false;
+    }
     const currentTrack = queue.current;
     const success = queue.skip();
     await interaction.followUp({
-        content: success ? `✅ | Skipped **${currentTrack}**!` : "❌ | Something went wrong!"
+      content: success ? `✅ | Skipped **${currentTrack}**!` : "❌ | Something went wrong!",
     });
 
-    return false
+    return false;
   },
-})
+});

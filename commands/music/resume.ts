@@ -10,11 +10,11 @@ export default new Command({
     await interaction.deferReply();
     const queue = Audio.player.getQueue(interaction.guildId as string);
     if (!queue || !queue.playing) {
-      await interaction.followUp({ content: "❌ | No music is being played!" })
-      return false
-    };
-    queue.setPaused(false)
+      await interaction.followUp({ content: "❌ | No music is being played!" });
+      return false;
+    }
+    queue.setPaused(false);
     await interaction.followUp({ content: "🟢 | Music resumed!" });
-    return false
+    return false;
   },
-})
+});
