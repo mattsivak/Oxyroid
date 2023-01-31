@@ -12,7 +12,13 @@ import Audio from "./classes/Audio";
 
 const client = new Discord.Client({
   partials: [Partials.Message, Partials.Channel],
-  intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.GuildMessageReactions, GatewayIntentBits.GuildVoiceStates, GatewayIntentBits.GuildMembers],
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.GuildMessageReactions,
+    GatewayIntentBits.GuildVoiceStates,
+    GatewayIntentBits.GuildMembers,
+  ],
 });
 
 Data.client = client;
@@ -26,19 +32,19 @@ client.on("ready", async () => {
 
   startServer();
 
-  Audio.init()
+  Audio.init();
 
   await FeaturesLoader.load();
 
   await ButtonsLoader.load();
-  await ButtonLoader.registerEventListener()
+  await ButtonLoader.registerEventListener();
 
   await CommandLoader.load();
   await CommandLoader.registerCommandsOnApi();
   await CommandLoader.registerEventHandler();
 
   new Database();
-})
+});
 
 client.login(Settings.token);
 
@@ -52,7 +58,6 @@ Logger.log("console", `Starting procces. Date and time is ${dateString}`, "INFO"
 
 Logger.log("console|file", `Developer mode is set to: ${Settings.devMode}`, "INFO", "PROCESS");
 
-
 function exitHandler(reason: any) {
   if (alreadyEded) return;
   alreadyEded = true;
@@ -63,15 +68,15 @@ function exitHandler(reason: any) {
 }
 
 //do something when app is closing
-process.on('exit', exitHandler.bind(null, "exit"));
+process.on("exit", exitHandler.bind(null, "exit"));
 
 //catches ctrl+c event
-process.on('SIGINT', exitHandler.bind(null, "SIGINT"));
+process.on("SIGINT", exitHandler.bind(null, "SIGINT"));
 
 // catches "kill pid" (for example: nodemon restart)
-process.on('SIGUSR1', exitHandler.bind(null, "SIGUSR1"));
-process.on('SIGUSR2', exitHandler.bind(null, "SIGUSR2"));
+process.on("SIGUSR1", exitHandler.bind(null, "SIGUSR1"));
+process.on("SIGUSR2", exitHandler.bind(null, "SIGUSR2"));
 
-process.on('uncaughtException', function(err) {
-  Logger.log("console|file|whatsapp", err.message, "ERR", err.stack ? err.stack : "index")
+process.on("uncaughtException", function (err) {
+  Logger.log("console|file|whatsapp", err.message, "ERR", err.stack ? err.stack : "index");
 });

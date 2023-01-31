@@ -6,4 +6,4 @@ export default new Feature("OnGuildAddRegisterCommands", (client) => {
     // Register commands on API
     await CommandLoader.registerCommandsOnApiOnSingleGuild(guild.id);
   });
-})
+});
