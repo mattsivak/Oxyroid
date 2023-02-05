@@ -1,4 +1,4 @@
-import Discord, { GatewayIntentBits, Partials, VoiceChannel } from 'discord.js'
+import Discord, { Client, GatewayIntentBits, Partials } from 'discord.js'
 import Settings from './classes/Settings'
 import Logger from './classes/Logger'
 import Database from './classes/Database'
@@ -9,8 +9,10 @@ import Data from './classes/Data'
 import startServer from './express'
 import ButtonLoader from './classes/loaders/ButtonLoader'
 import Audio from './classes/Audio'
+import registerExitHandler from './utils/registerExitHandler'
 
-const client = new Discord.Client({
+// Initiate client
+const client = new Client({
 	partials: [Partials.Message, Partials.Channel],
 	intents: [
 		GatewayIntentBits.Guilds,
@@ -21,24 +23,24 @@ const client = new Discord.Client({
 	]
 })
 
-Data.client = client
-
 client.on('ready', async () => {
-	Logger.log(
-		'console|file',
-		`Logged in as ${client.user?.tag}`,
-		'INFO',
-		'CLIENT'
-	)
+	Logger.log(`Logged in as ${client.user?.tag}`, 'INFO', 'CLIENT')
+
+	// Connect to DB
+	new Database()
+
+	// Load client info to loaders and data class
+	Data.client = client
 	Data.clientId = client.user?.id || ''
 	FeaturesLoader.client = client
 	CommandLoader.client = client
 	ButtonLoader.client = client
 
+	// Init random stuff
 	startServer()
-
 	Audio.init()
 
+	// Load and register loaders
 	await FeaturesLoader.load()
 
 	await ButtonsLoader.load()
@@ -47,66 +49,18 @@ client.on('ready', async () => {
 	await CommandLoader.load()
 	await CommandLoader.registerCommandsOnApi()
 	await CommandLoader.registerEventHandler()
-
-	new Database()
 })
-
-client.login(Settings.token)
-
-let alreadyEded = false
 
 const date = new Date()
 const dateString = date.toLocaleString()
 
+// Log debug messages and login client
 Logger.log(
-	'file|withoutFormating',
-	`Starting procces. Date and time is ${dateString}\n\n`,
-	'INFO',
-	'PROCESS'
-)
-Logger.log(
-	'console',
 	`Starting procces. Date and time is ${dateString}`,
 	'INFO',
 	'PROCESS'
 )
+Logger.log(`Developer mode is set to: ${Settings.devMode}`, 'INFO', 'PROCESS')
+client.login(Settings.token)
 
-Logger.log(
-	'console|file',
-	`Developer mode is set to: ${Settings.devMode}`,
-	'INFO',
-	'PROCESS'
-)
-
-function exitHandler(reason: any) {
-	if (alreadyEded) return
-	alreadyEded = true
-	Logger.log(
-		'console|file',
-		`Exiting with reason: ${JSON.stringify(reason)}`,
-		'INFO',
-		'PROCESS'
-	)
-	setTimeout(() => {
-		process.exit(0)
-	}, 500)
-}
-
-//do something when app is closing
-process.on('exit', exitHandler.bind(null, 'exit'))
-
-//catches ctrl+c event
-process.on('SIGINT', exitHandler.bind(null, 'SIGINT'))
-
-// catches "kill pid" (for example: nodemon restart)
-process.on('SIGUSR1', exitHandler.bind(null, 'SIGUSR1'))
-process.on('SIGUSR2', exitHandler.bind(null, 'SIGUSR2'))
-
-process.on('uncaughtException', function (err) {
-	Logger.log(
-		'console|file|whatsapp',
-		err.message,
-		'ERR',
-		err.stack ? err.stack : 'index'
-	)
-})
+registerExitHandler()

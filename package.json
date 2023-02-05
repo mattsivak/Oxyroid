@@ -28,10 +28,11 @@
 		"express-session": "^1.17.3",
 		"ffmpeg": "^0.0.4",
 		"fluent-ffmpeg": "^2.1.2",
-		"mongoose": "^6.8.2",
+		"mongoose": "^6.9.0",
 		"path": "^0.12.7",
 		"ping": "^0.4.2",
 		"play-dl": "^1.9.6",
+		"systeminformation": "^5.17.8",
 		"url": "^0.11.0",
 		"whatsapp-api-js": "^0.8.1",
 		"ytdl-core": "^4.11.2"

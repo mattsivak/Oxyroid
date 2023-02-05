@@ -11,17 +11,12 @@ export default class ButtonLoader {
 
 	static async load() {
 		if (!this.client) {
-			Logger.log(
-				'console|file|whatsapp',
-				'No client provided',
-				'ERR',
-				'BUTTONS'
-			)
+			Logger.log('No client provided', 'ERR', 'BUTTONS')
 			return
 		}
 
 		if (this.alreadyLoaded) {
-			Logger.log('console|file|whatsapp', 'Already loaded', 'WARN', 'BUTTONS')
+			Logger.log('Already loaded', 'WARN', 'BUTTONS')
 			return
 		}
 
@@ -33,7 +28,7 @@ export default class ButtonLoader {
 				const module = await import(path.join(dir, file))
 				ButtonLoader.buttons.push(module.default)
 
-				Logger.log('console|file', `Loaded button: ${file}`, 'INFO', 'BUTTONS')
+				Logger.log(`Loaded button: ${file}`, 'INFO', 'BUTTONS')
 			}
 		}
 
@@ -42,12 +37,7 @@ export default class ButtonLoader {
 
 	static registerEventListener() {
 		if (!this.client) {
-			Logger.log(
-				'console|file|whatsapp',
-				'No client provided',
-				'ERR',
-				'BUTTONS'
-			)
+			Logger.log('No client provided', 'ERR', 'BUTTONS')
 			return
 		}
 

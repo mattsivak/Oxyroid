@@ -17,7 +17,7 @@ app.use(
 	session({
 		resave: false, // don't save session if unmodified
 		saveUninitialized: false, // don't create session until something stored
-		secret: 'whuuuuuuuu'
+		secret: 'token123'
 	})
 )
 
@@ -33,11 +33,6 @@ app.use('*', (_req, res) => {
 
 export default function start() {
 	app.listen(PORT, () => {
-		Logger.log(
-			'console|file',
-			`Server listening on port ${PORT.toString()}`,
-			'INFO',
-			'SERVER'
-		)
+		Logger.log(`Server listening on port ${PORT.toString()}`, 'INFO', 'SERVER')
 	})
 }

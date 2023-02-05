@@ -12,35 +12,25 @@ export default class FeaturesLoader {
 	// Load features
 	static async load(): Promise<void> {
 		if (!this.client) {
-			Logger.log(
-				'console|file|whatsapp',
-				'No client provided',
-				'ERR',
-				'FEATURES'
-			)
+			Logger.log('No client provided', 'ERR', 'FEATURES')
 			return
 		}
 
 		if (this.alreadyLoaded) {
-			Logger.log('console|file|whatsapp', 'Already loaded', 'WARN', 'FEATURES')
+			Logger.log('Already loaded', 'WARN', 'FEATURES')
 			return
 		}
 
-		const dir = path.join(__dirname, '../../features')
-		const files = fs.readdirSync(dir)
+		const dirPath = path.join(__dirname, '../../features')
+		const filesList = fs.readdirSync(dirPath)
 
-		for (const file of files) {
+		for (const file of filesList) {
 			if (file.endsWith('.ts')) {
-				const module = await import(path.join(dir, file))
+				const module = await import(path.join(dirPath, file))
 				FeaturesLoader.Features.push(module.default)
 				await module.default.run(FeaturesLoader.client)
 
-				Logger.log(
-					'console|file',
-					`Loaded feature: ${file}`,
-					'INFO',
-					'FEATURES'
-				)
+				Logger.log(`Loaded feature: ${file}`, 'INFO', 'FEATURES')
 			}
 		}
 

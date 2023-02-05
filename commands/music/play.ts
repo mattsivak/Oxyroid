@@ -70,12 +70,7 @@ export default new Command({
 			// @ts-ignore
 			async onBeforeCreateStream(track, source, _queue) {
 				if (Settings.devMode) {
-					Logger.log(
-						'console|file',
-						`Source used: ${source}`,
-						'DEB',
-						'PLAYCOMMAND'
-					)
+					Logger.log(`Source used: ${source}`, 'DEB', 'PLAYCOMMAND')
 				}
 				// only trap youtube source
 				if (source === 'youtube') {

@@ -8,7 +8,7 @@ const reqString = {
 }
 
 const GuildSchema = new mongoose.Schema({
-	guildID: reqString,
+	guildId: reqString,
 	welcomeChannelID: String
 })
 

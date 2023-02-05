@@ -51,7 +51,6 @@ export default new Command({
 			if (err.rawError.code === 50034) {
 				return "I can't delete messages that are older then 14 days. It is discord limitation."
 			} else {
-				Logger.log('console|file|whatsapp', err, 'ERR', 'CLEARCOMMAND')
 				return 'Unknown error occured.'
 			}
 		}

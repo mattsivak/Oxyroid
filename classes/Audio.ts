@@ -1,13 +1,8 @@
-import {
-	GuildBasedChannel,
-	Snowflake,
-	TextChannel,
-	VoiceChannel
-} from 'discord.js'
+import { Snowflake, TextChannel, VoiceChannel } from 'discord.js'
 import { Player, QueryType } from 'discord-player'
-import ytdl from 'ytdl-core'
 import Data from './Data'
 import Logger from './Logger'
+import Settings from './Settings'
 
 interface Queue {
 	userId: Snowflake
@@ -35,19 +30,25 @@ export default class Audio {
 		})
 
 		this.player.on('error', (queue, error) => {
-			console.log(
-				`[${queue.guild.name}] Error emitted from the queue: ${error.message}`
+			Logger.log(
+				`[${queue.guild.name}] Error emitted from the queue: ${error.message}`,
+				'ERR',
+				'AUDIO'
 			)
 		})
 		this.player.on('connectionError', (queue, error) => {
-			console.log(
-				`[${queue.guild.name}] Error emitted from the connection: ${error.message}`
+			Logger.log(
+				`[${queue.guild.name}] Error emitted from the connection: ${error.message}`,
+				'ERR',
+				'AUDIO'
 			)
 		})
 
-		// this.player.on("debug", (idk, mess) => {
-		//   console.log(mess);
-		// })
+		if (Settings.devMode === true) {
+			this.player.on('debug', (idk, mess) => {
+				console.log(mess)
+			})
+		}
 
 		this.player.on('trackStart', (queue, track) => {
 			;(queue.metadata as TextChannel).send(

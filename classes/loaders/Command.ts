@@ -146,7 +146,6 @@ export default class Command {
 				afterGen(this.builder)
 			} catch (err) {
 				Logger.log(
-					'console|file|whatsapp',
 					'An error occured while trying to run afterGen function on command ' +
 						name,
 					'ERR',
