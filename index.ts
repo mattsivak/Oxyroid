@@ -8,7 +8,6 @@ import ButtonsLoader from './classes/loaders/ButtonLoader';
 import Data from './classes/Data';
 import startServer from './express';
 import ButtonLoader from './classes/loaders/ButtonLoader';
-import Audio from './classes/Audio';
 import registerExitHandler from './utils/registerExitHandler';
 
 // Initiate client
@@ -38,7 +37,6 @@ client.on('ready', async () => {
 
 	// Init random stuff
 	startServer();
-	Audio.init();
 
 	// Load and register loaders
 	await FeaturesLoader.load();
