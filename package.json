@@ -2,7 +2,7 @@
 	"name": "bialu_bot_rewrite",
 	"version": "0.0.4",
 	"description": "",
-	"main": "index.js",
+	"main": "index.ts",
 	"scripts": {},
 	"keywords": [],
 	"author": "",
