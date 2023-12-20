@@ -44,6 +44,9 @@ client.on('ready', async () => {
 	//   await ButtonsLoader.load()
 	ButtonLoader.registerEventListener();
 
+	if (!Settings.devMode) {
+		await CommandLoader.deleteOldCommands();
+	}
 	await CommandLoader.load();
 	await CommandLoader.registerCommandsOnApi();
 	await CommandLoader.registerEventHandler();

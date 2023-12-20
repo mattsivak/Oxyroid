@@ -103,6 +103,19 @@ export default class CommandLoader {
 		}
 	}
 
+	static deleteOldCommands() {
+		this.rest
+			.put(Routes.applicationCommands(Data.clientId), { body: [] })
+			.then(() =>
+				Logger.log(
+					'Successfully deleted all application commands.',
+					'INFO',
+					'COMMANDS'
+				)
+			)
+			.catch(msg => Logger.log(msg, 'ERR', 'COMMANDS'));
+	}
+
 	// Register event handler
 	static async registerEventHandler(): Promise<void> {
 		if (!this.client) {
@@ -159,7 +172,7 @@ export default class CommandLoader {
 					}
 				});
 			} catch (err) {
-				interaction.reply('Some error occured. Please try again later.');
+				interaction.reply('Some error occurred. Please try again later.');
 				Logger.log(
 					`Error while executing command ${interaction.commandName}: ${err}`,
 					'ERR',

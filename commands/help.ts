@@ -1,49 +1,33 @@
-import {
-  Client,
-  EmbedBuilder,
-  ActionRowBuilder,
-  InteractionReplyOptions,
-} from 'discord.js'
-import helpCategory from '../buttons/helpCategory'
-import Command from '../classes/loaders/Command'
-import CommandHandler from '../classes/loaders/CommandLoader'
-import Settings from '../classes/Settings'
+import { Client, EmbedBuilder, InteractionReplyOptions } from 'discord.js';
+import helpCategory from '../buttons/helpCategory';
+import Command from '../classes/loaders/Command';
+import CommandHandler from '../classes/loaders/CommandLoader';
+import Settings from '../classes/Settings';
 
 export default new Command({
-  name: 'help',
-  description: 'Shows help message.',
-  group: 'utility',
+	name: 'help',
+	description: 'What the hell is this bot?',
+	group: 'utility',
 
-  // functinos
-  run: async (_client: Client, message) => {
-    if (!message) return 'Some error occured'
-    if (!message.guild) return 'Some error occured'
+	run: async (_client: Client, message) => {
+		if (!message) return 'Some error occurred';
+		if (!message.guild) return 'Some error occurred';
 
-    const commands: Array<Command> = CommandHandler.Commands
+		const commands: Array<Command> = CommandHandler.Commands;
 
-    let description = ''
+		const embed = new EmbedBuilder()
+			.setTitle('Help - categories')
+			.setColor(Settings.successColor);
 
-    const embed = new EmbedBuilder()
-      .setTitle('Help - categories')
-      .setColor(Settings.successColor)
+		commands.forEach(command => {
+			embed.addFields({
+				name: '**' + command.builder.name + '** - ' + command.options.group,
+				value: command.builder.description
+			});
+		});
 
-    const groups = commands.map((command: Command) => command.options.group)
-    const options = commands.map(command => command.options)
-
-    const row = new ActionRowBuilder()
-    for (let i = 0; i < options.length; i++) {
-      const option = groups[i]
-
-      description += '**' + option.toUpperCase() + '**\n'
-
-      row.addComponents(helpCategory.builder.setCustomId(option.toUpperCase()))
-    }
-
-    embed.setDescription(description)
-
-    return {
-      embeds: [embed],
-      components: [row]
-    } as InteractionReplyOptions
-  }
-})
+		return {
+			embeds: [embed]
+		} as InteractionReplyOptions;
+	}
+});
