@@ -45,8 +45,8 @@ client.on('ready', async () => {
 	ButtonLoader.registerEventListener();
 
 	await CommandLoader.load();
-	//   await CommandLoader.registerCommandsOnApi()
-	//   await CommandLoader.registerEventHandler()
+	await CommandLoader.registerCommandsOnApi();
+	await CommandLoader.registerEventHandler();
 });
 
 const date = new Date();
