@@ -9,15 +9,14 @@
 	"license": "ISC",
 	"devDependencies": {
 		"@types/express-session": "^1.17.5",
-		"@types/ping": "^0.4.1",
-		"nodemon": "^2.0.15"
+		"@types/ping": "^0.4.1"
 	},
 	"dependencies": {
 		"@discord-player/extractor": "^3.0.2",
 		"@discordjs/builders": "^1.4.0",
 		"@discordjs/opus": "^0.8.0",
 		"@discordjs/rest": "^1.5.0",
-		"axios": "^0.27.2",
+		"axios": "^1.6.2",
 		"body-parser": "^1.20.0",
 		"colors": "^1.4.0",
 		"discord-player": "^5.3.2",
@@ -34,7 +33,6 @@
 		"play-dl": "^1.9.6",
 		"systeminformation": "^5.17.8",
 		"url": "^0.11.0",
-		"whatsapp-api-js": "^0.8.1",
 		"ytdl-core": "^4.11.2"
 	}
 }

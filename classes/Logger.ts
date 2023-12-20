@@ -1,6 +1,7 @@
 import color from 'colors/safe';
 import fs from 'fs';
 import path from 'path';
+import Settings from './Settings';
 
 type Type = 'OKAY' | 'ERR' | 'WARN' | 'INFO' | 'NOTE' | 'DEB';
 
@@ -9,11 +10,20 @@ export default class Logger {
 	static notLogedMessages: Array<string> = [];
 
 	static log(message: string, type: Type, from: string): void {
-		if (from === 'LOGGER') {
-			this.logToConsole(message, type, from);
-		} else {
-			this.logToConsole(message, type, from);
-			this.logToFile(message, type, from);
+		if (Settings.devMode) {
+			if (from === 'LOGGER') {
+				this.logToConsole(message, type, from);
+			} else {
+				this.logToConsole(message, type, from);
+				this.logToFile(message, type, from);
+			}
+		} else if (type !== 'DEB' && type !== 'NOTE') {
+			if (from === 'LOGGER') {
+				this.logToConsole(message, type, from);
+			} else {
+				this.logToConsole(message, type, from);
+				this.logToFile(message, type, from);
+			}
 		}
 	}
 

@@ -8,10 +8,9 @@ export default class Settings {
 	static developerDiscordGuildId = '1013471462528655441';
 	static evalChannelId = '1071819176567648276';
 
-	static devMode: boolean = process.env.DEV === 'on' ? true : false;
-	static db = this.devMode
-		? 'mongodb+srv://bialu:BialuJeTop@cluster0.g5vfi.mongodb.net/Oxyroid-dev'
-		: 'mongodb+srv://bialu:BialuJeTop@cluster0.g5vfi.mongodb.net/Oxyroid';
+	static devMode: boolean = true;
+	static db =
+		'mongodb+srv://mattsivak:ss1540SS@cluster0.jic3kqq.mongodb.net/Oxyroid-dev';
 
 	static serverPort = 4000;
 
