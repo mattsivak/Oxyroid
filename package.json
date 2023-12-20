@@ -3,13 +3,16 @@
 	"version": "0.0.4",
 	"description": "",
 	"main": "index.ts",
-	"scripts": {},
+	"scripts": {
+		"start": "tsx index.ts"
+	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
 		"@types/express-session": "^1.17.5",
-		"@types/ping": "^0.4.1"
+		"@types/ping": "^0.4.1",
+		"tsx": "^4.7.0"
 	},
 	"dependencies": {
 		"@discordjs/builders": "^1.4.0",
