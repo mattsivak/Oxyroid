@@ -6,7 +6,7 @@ export default class Settings {
 	static token = process.env.TOKEN as string;
 
 	static developerDiscordGuildId = '1013471462528655441';
-	static evalChannelId = '1071812026009137263';
+	static evalChannelId = '1071819176567648276';
 
 	static devMode: boolean = process.env.DEV === 'on' ? true : false;
 	static db = this.devMode
